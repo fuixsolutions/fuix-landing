@@ -41,10 +41,10 @@ const avatarSrcs: Array<string> = [
         class="text-yellow-500 dark:text-yellow-400">Soluciones Digitales Inteligentes</span>`
     subTitle=`Integramos y optimizamos herramientas digitales para que puedas enfocarte en lo que realmente importa: <strong>tu negocio.</strong>`
     primaryBtn="Nuestros Servicios"
-    primaryBtnURL="/products"
+    primaryBtnURL="/services"
     secondaryBtn="Contáctenos"
     secondaryBtnURL="/contact"
-    withReview={true}
+    withReview={false}
     avatars={avatarSrcs}
     rating=`<span class="font-bold">4.8</span> / 5`
     starCount={4}
@@ -58,16 +58,16 @@ const avatarSrcs: Array<string> = [
     subTitle="Grandes empresas y pequeños emprendimientos han confiado en nuestra expertise."
   />
 
-  <!-- <FeaturesGeneral
-    title="Meeting Industry Demands"
-    subTitle="At ScrewFast, we tackle the unique challenges encountered in the hardware and construction sectors. From cutting-edge tools to expert services, we're dedicated to helping you overcome obstacles and achieve your goals."
-    src={featureImage}
-    alt="ScrewFast products in floating boxes"
+  <FeaturesGeneral
+    title="Tecnología corporativa a tu alcance"
+    subTitle="Construimos soluciones digitales integrando metodologías ágiles y tecnología de punta."
+    src={mvp}
+    alt="Fuix Low Code"
     features={features}
-  /> -->
+  />
 
   <FeaturesNavs
-    title=`Permítenos guiarte a través del proceso de creación de una <span class="text-yellow-500 dark:text-yellow-400">solución digital</span> que satisfaga tus necesidades.`
+    title=`Permítenos guiarte a través del proceso de creación de una <span class="text-yellow-500 dark:text-yellow-400">solución digital</span> que cumpla las expectativas de tu negocio.`
     tabs={[
       {
         heading: "Low Code / No Code",
@@ -84,16 +84,16 @@ const avatarSrcs: Array<string> = [
           "Aprovecha el poder de la automatización y la colaboración para optimizar tu proceso de desarrollo y entregar software de alta calidad.",
         svg: "nas",
         src: devops,
-        alt: "A screenshot or graphic representation of the intuitive dashboard",
+        alt: "New Relic DevOps",
         second: true,
       },
       {
         heading: "Productos Mínimos Viables",
         content:
           "Lanza tu producto de forma rápida y rentable, permitiéndote recopilar comentarios e iterar en función de información del mundo real.",
-        svg: "chart",
+        svg: "rocket",
         src: mvp,
-        alt: "Gray metal building frame near tower crane during daytime",
+        alt: "Productos Mínimos Viables",
       },
     ]}
   />
