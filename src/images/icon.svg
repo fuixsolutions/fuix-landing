@@ -1,8 +1,22 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="-0.00585938" y="-0.000488281" width="512" height="512" rx="100" fill="#262626"/>
-<rect x="20.9297" y="109.01" width="173.138" height="40.5431" rx="20.2715" transform="rotate(0.0432252 20.9297 109.01)" fill="#FACC15"/>
-<rect x="100.982" y="183.969" width="173.138" height="40.5431" rx="20.2715" transform="rotate(0.0432252 100.982 183.969)" fill="#FACC15"/>
-<rect x="181.491" y="259.354" width="173.138" height="40.5431" rx="20.2715" transform="rotate(0.0432252 181.491 259.354)" fill="#FACC15"/>
-<rect x="261.998" y="334.739" width="62.4311" height="40.5431" rx="20.2715" transform="rotate(0.0432252 261.998 334.739)" fill="#FACC15"/>
-<path d="M442.513 435.922C445.843 442.651 438.906 449.847 432.059 446.766L355.339 412.235C350.291 409.962 349.021 403.373 352.863 399.387L392.264 358.515C396.106 354.53 402.737 355.557 405.193 360.519L442.513 435.922Z" fill="#FACC15"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="57.9722583%" y1="1.22128048%" x2="41.828139%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#392D00" offset="0%"></stop>
+            <stop stop-color="#FACC15" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" fill-rule="nonzero">
+            <rect id="bg" fill="#262626" x="0.992202724" y="-0.000488281" width="511.001949" height="512" rx="100"></rect>
+            <g id="fuix" transform="translate(111.000000, 63.000000)">
+                <path d="M95.8128655,149 L95.8128655,289.444444 C95.8128655,342.770606 52.9159843,386 0,386 L0,245.555556 C-6.48033887e-15,192.229395 42.8968812,149 95.8128655,149 Z" id="vert" fill="url(#linearGradient-1)"></path>
+                <path d="M96.0293102,146 L241.528265,146 C241.528265,199.571621 198.534478,243 145.498955,243 L0,243 C-6.49497819e-15,189.428379 42.9937868,146 96.0293102,146 Z" id="mid" fill="#FACC15"></path>
+                <path d="M96.1721637,0 L291.430799,0 L291.430799,0 C291.430799,53.5716206 248.373055,97 195.258635,97 L0,97 L0,97 C-6.50464014e-15,43.4283794 43.0577445,6.56063139e-15 96.1721637,0 Z" id="top" fill="#FACC15"></path>
+            </g>
+        </g>
+    </g>
 </svg>

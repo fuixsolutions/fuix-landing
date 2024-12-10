@@ -6,6 +6,8 @@ import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { SITE } from "@data/constants";
+import ContactSection from "@components/sections/misc/ContactSection.astro";
+import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 
 // Global declaration for gsap animation library
 declare global {
@@ -32,6 +34,7 @@ export async function getStaticPaths() {
 const { product } = Astro.props;
 
 const pageTitle: string = `${product.data.title} | ${SITE.title}`;
+const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-0.5 h-6 w-6 text-yellow-500 dark:text-yellow-400 flex-none"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>`;
 ---
 
 <MainLayout title={pageTitle}>
@@ -54,7 +57,7 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
     >
       <div id="fadeInUp">
         <h1
-          class="block text-4xl font-bold tracking-tighter text-neutral-800 dark:text-neutral-200 sm:text-5xl md:text-6xl lg:text-7xl"
+          class="font-header block text-4xl font-bold tracking-tighter text-yellow-500 dark:text-yellow-400 sm:text-5xl md:text-6xl lg:text-7xl"
         >
           {product.data.title}
         </h1>
@@ -64,9 +67,9 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
       </div>
       <div>
         <Image
-          id="fadeInMoveRight"
+          id="fadeInMoveUp"
           src={product.data.main.imgMain}
-          class="w-[600px]"
+          class="w-[600px] rounded-3xl"
           alt={product.data.main.imgAlt}
           format={"avif"}
           loading={"eager"}
@@ -74,8 +77,131 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
       </div>
     </div>
   </section>
-
-  <div class="mx-auto max-w-[85rem] px-4 pt-10 sm:px-6 lg:px-8 lg:pt-14">
+  <section
+    class="mx-auto flex max-w-[85rem] flex-col px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="lg:grid lg:grid-cols-12 lg:items-center lg:gap-16">
+      <div class="lg:col-span-5">
+        {
+          product.data.blueprints.first && (
+            <Image
+              src={product.data.blueprints.first}
+              class="rounded-3xl"
+              alt="Service"
+              format={"avif"}
+            />
+          )
+        }
+      </div>
+      <div class="mt-5 sm:mt-10 lg:col-span-7 lg:mt-0">
+        <div class="space-y-6 sm:space-y-8">
+          <div class="space-y-2 md:space-y-4">
+            <h2
+              class="font-header text-balance text-3xl font-bold text-neutral-800 dark:text-neutral-200 lg:text-4xl"
+            >
+              {product.data.longDescription.title}
+            </h2>
+            {
+              product.data.longDescription.subTitle && (
+                <p class="text-pretty text-neutral-600 dark:text-neutral-400">
+                  {product.data.longDescription.subTitle}
+                </p>
+              )
+            }
+          </div>
+          {
+            product.data.descriptionList && (
+              <ul class="space-y-2 sm:space-y-4">
+                {product.data.descriptionList.map(
+                  (item: { subTitle: string }) => (
+                    <li class="flex space-x-3">
+                      <Fragment set:html={ListItemMarker} />
+                      <span class="text-pretty text-base text-neutral-600 dark:text-neutral-400">
+                        {item.subTitle}
+                      </span>
+                    </li>
+                  )
+                )}
+              </ul>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+  <ClientsSection
+    title="Confían en nosotros"
+    subTitle=`Grandes empresas y pequeños emprendimientos han confiado en nuestra expertise en ${product.data.title}.`
+  />
+  <section
+    class="mx-auto flex max-w-[85rem] flex-col rounded-3xl bg-neutral-100 px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="lg:grid lg:grid-cols-12 lg:items-center lg:gap-10">
+      <div class="mt-5 sm:mt-10 lg:col-span-6 lg:mt-0">
+        <div class="space-y-6 sm:space-y-8">
+          <div class="space-y-2 md:space-y-4">
+            <h2
+              class="font-header text-balance text-3xl font-bold text-gray-800 lg:text-4xl"
+            >
+              Nuestras soluciones <span
+                class="text-yellow-500 dark:text-yellow-400"
+                >{product.data.title}</span
+              > incluyen:
+            </h2>
+          </div>
+          {
+            product.data.specificationsLeft && (
+              <ul class="space-y-2 sm:space-y-4">
+                {product.data.specificationsLeft.map(
+                  (item: { title: string; subTitle: string }) => (
+                    <li class="flex space-x-3">
+                      <Fragment set:html={ListItemMarker} />
+                      <div class="info">
+                        <h2 class="text-balance text-base font-bold text-neutral-800 dark:text-neutral-200">
+                          {item.title}
+                        </h2>
+                        <span class="text-pretty text-base text-neutral-600 dark:text-neutral-400">
+                          {item.subTitle}
+                        </span>
+                      </div>
+                    </li>
+                  )
+                )}
+              </ul>
+            )
+          }
+        </div>
+      </div>
+      <div class="lg:col-span-6">
+        <div class="mt-8 grid grid-cols-2 gap-4">
+          {
+            product.data.blueprints.second && (
+              <Image
+                class="w-full rounded-xl"
+                src={product.data.blueprints.second}
+                alt="one"
+                draggable={"false"}
+                format={"avif"}
+              />
+            )
+          }
+          {
+            product.data.blueprints.third && (
+              <Image
+                class="mt-4 w-full rounded-xl lg:mt-10"
+                src={product.data.blueprints.third}
+                alt="two"
+                draggable={"false"}
+                format={"avif"}
+              />
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+  <ContactSection />
+  <!-- <div class="mx-auto max-w-[85rem] px-4 pt-10 sm:px-6 lg:px-8 lg:pt-14">
     <nav
       class="mx-auto grid max-w-6xl gap-y-px sm:flex sm:gap-x-4 sm:gap-y-0"
       aria-label="Tabs"
@@ -180,7 +306,7 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
                                   (header) => (
                                     <th
                                       scope="col"
-                                      class="px-6 py-3 text-start text-xs font-medium uppercase text-neutral-500 dark:text-neutral-500"
+                                      class="px-6 py-3 text-start text-xs  uppercase text-neutral-500 dark:text-neutral-500"
                                     >
                                       {header}
                                     </th>
@@ -196,7 +322,7 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
                                     {/* Iterate through each cell value in the row's description array */}
                                     {rowData.map((cellValue) => (
                                       // Render each cell value in its own <td> element
-                                      <td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-neutral-600 dark:text-neutral-400">
+                                      <td class="whitespace-nowrap px-6 py-4 text-sm  text-neutral-600 dark:text-neutral-400">
                                         {cellValue}
                                       </td>
                                     ))}
@@ -248,7 +374,7 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
         }
       </div>
     </div>
-  </div>
+  </div> -->
 </MainLayout>
 
 <script>
@@ -280,9 +406,9 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
     willChange: "transform, opacity",
   });
 
-  setElementAnimationDefaults("#fadeInMoveRight", {
+  setElementAnimationDefaults("#fadeInMoveUp", {
     autoAlpha: 0,
-    x: 300,
+    y: 300,
     willChange: "transform, opacity",
   });
 
@@ -303,9 +429,9 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
   );
 
   timeline.to(
-    "#fadeInMoveRight",
-    { duration: 1.5, autoAlpha: 1, x: 0, ease: "power2.inOut" },
-    "-=1.4"
+    "#fadeInMoveUp",
+    { duration: 1.5, autoAlpha: 1, y: 0, ease: "power2.out" },
+    "-=1.2"
   );
 
   timeline.to("#overlay", { duration: 1, autoAlpha: 0, delay: 0.2 });

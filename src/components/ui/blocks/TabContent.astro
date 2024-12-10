@@ -1,10 +1,17 @@
 ---
 // Import the Image component from astro:assets
 import { Image } from "astro:assets";
-
+import Icon from "@components/ui/icons/Icon.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 // Destructure the component properties from Astro.props
-const { id, aria, src, alt, first, second } = Astro.props;
-
+const { id, aria, src, alt, first, second, link, svg } = Astro.props;
+const baseClasses =
+  "group inline-flex items-center justify-center gap-x-3 rounded-full px-4 py-3 text-center text-sm font-medium text-neutral-700 ring-zinc-500 focus-visible:ring transition duration-300 outline-none";
+const borderClasses = "border border-transparent";
+const bgColorClasses = "bg-yellow-400 dark:focus:outline-none";
+const hoverClasses = "hover:shadow-2xl hover:shadow-yellow-500";
+const fontSizeClasses = "2xl:text-base";
+const ringClasses = "dark:ring-zinc-200";
 // Define TypeScript interface for the properties
 interface Props {
   id: string;
@@ -13,6 +20,8 @@ interface Props {
   alt: string;
   first?: boolean;
   second?: boolean;
+  link?: string;
+  svg?: string;
 }
 // Set class based on 'first' property
 // If 'first' is present, show the tab content immediately
@@ -51,4 +60,14 @@ This is the full example:
     format={"avif"}
     loading={"eager"}
   />
+  <div class="w-100 -mt-6 text-center">
+    <a
+      class={`${baseClasses} ${borderClasses} ${bgColorClasses} ${hoverClasses}`}
+      href={link}
+      rel="noopener noreferrer"
+    >
+      <span class="-mt-2"><Icon name={svg} /></span>
+      {alt}
+    </a>
+  </div>
 </div>

@@ -2,26 +2,26 @@
 const navBarLinks = [
   { name: "Home", url: "/" },
   { name: "Servicios", url: "/services" },
-  { name: "Blog", url: "/blog" },
+  // { name: "Blog", url: "/blog" },
   { name: "Contacto", url: "/contact" },
 ];
 // An array of links for footer
 const footerLinks = [
   {
-    section: "Ecosystem",
+    section: "Empresa",
     links: [
-      { name: "Documentation", url: "/welcome-to-docs/" },
-      { name: "Tools & Equipment", url: "/products" },
-      { name: "Construction Services", url: "/services" },
+      { name: "Preguntas frecuentes", url: "/#faqs" },
+      { name: "Services", url: "/services" },
+      { name: "Contacto", url: "/contact" },
     ],
   },
   {
-    section: "Company",
+    section: "Servicios",
     links: [
-      { name: "About us", url: "#" },
-      { name: "Blog", url: "/blog" },
-      { name: "Careers", url: "#" },
-      { name: "Customers", url: "#" },
+      { name: "Low Code / No Code", url: "/services/low-code-no-code" },
+      { name: "DevOps", url: "/services/devops" },
+      { name: "Productos Mínimos Viables", url: "/services/mvp" },
+      // { name: "Blog", url: "/blog" },
     ],
   },
 ];
@@ -29,7 +29,7 @@ const footerLinks = [
 const socialLinks = {
   facebook: "https://www.facebook.com/",
   x: "https://twitter.com/",
-  github: "https://github.com/mearashadowfax/ScrewFast",
+  github: "https://github.com/fuixsolutions",
   google: "https://www.google.com/",
   slack: "https://slack.com/",
 };

@@ -5,20 +5,20 @@ export const servicesData = [
     description:
       "Construímos aplicaciones de software sin necesidad de escribir código",
     icon: "lowcode",
-    url: "/low-code-no-code",
+    url: "low-code-no-code",
   },
   {
     title: "DevOps",
     description:
       "Automatizamos el desarrollo de software y la gestión de infraestructura",
     icon: "nas",
-    url: "/devops",
+    url: "devops",
   },
   {
     title: "Productos Mínimos Viables",
     description: "Lanza tu producto al mercado en el menor tiempo posible",
     icon: "rocket",
-    url: "/mvp",
+    url: "mvp",
   },
 ];
 

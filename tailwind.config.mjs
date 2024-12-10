@@ -7,6 +7,16 @@ export default {
   ],
   darkMode: "class",
   theme: {
+    // set all header fonts to Raleway, the rest to Montserrat
+    // fontFamily: {
+    //   sans: [
+    //     '"Raleway", sans-serif',
+    //   ],
+    // },
+    fontFamily: {
+      sans: ['"Montserrat", sans-serif'], // Default font
+      header: ['"Raleway", sans-serif'], // Header font
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",

@@ -42,55 +42,50 @@ import Icon from "./icons/Icon.astro";
   </div>
 </div>
 
-<!--Import the necessary Dropdown plugin-->
-<!--https://preline.co/plugins/html/dropdown.html-->
-<script>
-  import "@preline/dropdown/index.js";
-</script>
-
 <script>
   // Type alias for supported languages
   type TLanguage = "en" | "fr";
-  // array of supported languages
+  // Array of supported languages
   const languages: TLanguage[] = ["en", "fr"];
 
   document.addEventListener("DOMContentLoaded", function () {
-    const languageLinks = document.querySelectorAll(".hs-dropdown-menu a");
+    // const languageLinks = document.querySelectorAll(".hs-dropdown-menu a"); makt it just for this ID: hs-dropdown-default
+    const languageLinks = document.querySelectorAll(
+      "#hs-dropdown-default + .hs-dropdown-menu a"
+    );
+
     languageLinks.forEach((element) => {
       const link = element as HTMLAnchorElement;
-      const lang = link
-        .getAttribute("href")
-        ?.replace("/", "")
-        .replace("/", "") as TLanguage;
+
+      // Extract the target language from the link's href
+      const lang = link.getAttribute("href")?.replace(/^\//, "") as TLanguage;
 
       link.addEventListener("click", function (event) {
         event.preventDefault();
 
         const url = new URL(window.location.href);
-        const pathParts = url.pathname
-          .split("/")
-          .filter((part) => part && !languages.includes(part as TLanguage));
 
-        // Disable the selection of the same language
-        if (lang === url.pathname.split("/")[1]) return;
+        // Split the current path into parts, remove empty segments
+        let currentPath = url.pathname.split("/").filter(Boolean);
 
-        // Determine if the current URL already has a language prefix
-        const currentLang = languages.includes(pathParts[0] as TLanguage) ? pathParts[0] : "en";
+        console.log("Current Path Before Cleanup:", currentPath);
 
-        // Remove current language prefix from pathParts
-        if (languages.includes(pathParts[0] as TLanguage)) {
-          pathParts.shift();
+        // Remove the current language prefix if present
+        if (languages.includes(currentPath[0] as TLanguage)) {
+          currentPath.shift(); // Remove language prefix
         }
 
-        // Determine if we are switching to a different language
-        if (lang !== currentLang) {
-          if (lang !== "en") {
-            // Add the new language prefix for non-English
-            pathParts.unshift(lang);
-          }
+        // Add the new language prefix if it's not English
+        if (lang !== "en") {
+          currentPath.unshift(lang);
         }
 
-        url.pathname = pathParts.join("/");
+        // Rebuild the URL path
+        url.pathname = "/" + currentPath.join("/");
+
+        console.log("Final URL:", url.toString());
+
+        // Navigate to the updated URL
         window.location.href = url.toString();
       });
     });

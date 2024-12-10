@@ -55,6 +55,7 @@ const productsCollection = defineCollection({
     blueprints: z.object({
       first: image().optional(),
       second: image().optional(),
+      third: image().optional(),
     }),
   }),
 });

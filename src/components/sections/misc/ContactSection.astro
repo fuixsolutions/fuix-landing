@@ -9,11 +9,12 @@ import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 
 // Define the variables that will be used in this component
-const title: string = "Contact us";
+const title: string = "Contáctanos";
 const subTitle: string =
-  "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.";
-const formTitle: string = "Fill in the form below";
-const formSubTitle: string = "We'll get back to you in 1-2 business days.";
+  "Contáctanos para cualquier consulta, comentario o soporte. ¡Estamos aquí para ayudarte!";
+const formTitle: string = "Envíanos un mensaje";
+const formSubTitle: string =
+  "Generalemente respondemos en un plazo de 24 horas.";
 ---
 
 <!-- Contact Us -->
@@ -21,7 +22,7 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
   <div class="mx-auto max-w-2xl lg:max-w-5xl">
     <div class="text-center">
       <h1
-        class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+        class="font-header text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
       >
         {title}
       </h1>
@@ -44,12 +45,12 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <TextInput
                 id="hs-firstname-contacts"
-                label="First Name"
+                label="Nombre"
                 name="hs-firstname-contacts"
               />
               <TextInput
                 id="hs-lastname-contacts"
-                label="Last Name"
+                label="Apellido"
                 name="hs-firstname-contacts"
               />
             </div>
@@ -57,13 +58,13 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
             <PhoneInput id="hs-phone-number" />
             <TextAreaInput
               id="hs-about-contacts"
-              label="Details"
+              label="Mensaje"
               name="hs-about-contacts"
             />
           </div>
 
           <div class="mt-4 grid">
-            <AuthBtn title="Send Message" />
+            <AuthBtn title="Enviar" />
           </div>
 
           <div class="mt-3 text-center">
@@ -77,38 +78,28 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
       <!--ContactIconBlocks are used to display different methods of contacting, including visiting office, email, browsing knowledgebase, and FAQ.-->
       <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
         <ContactIconBlock
-          heading="Knowledgebase"
-          content="Browse through all of our knowledgebase articles."
+          heading="Whatsapp"
+          content="Envíanos un mensaje por Whatsapp"
           isLinkVisible={true}
-          linkTitle="Visit guides & tutorials"
-          linkURL="#"
+          linkTitle="Conectar"
+          linkURL="https://api.whatsapp.com/send/?phone=56968406912&text=Hola,%20me%20gustar%C3%ADa%20&type=phone_number&app_absent=0"
           isArrowVisible={true}
-          ><Icon name="question" />
+          ><Icon name="whatsapp" />
         </ContactIconBlock>
 
         <ContactIconBlock
-          heading="FAQ"
-          content="Explore our FAQ for quick, clear answers to common queries."
-          isLinkVisible={true}
-          linkTitle="Visit FAQ"
-          linkURL="#"
-          isArrowVisible={true}
-          ><Icon name="chatBubble" />
-        </ContactIconBlock>
-
-        <ContactIconBlock
-          heading="Visit our office"
-          content="UK ScrewFast"
+          heading="Visita nuestra oficina"
+          content="Fuix SpA"
           isAddressVisible={true}
-          addressContent="72 Union Terrace, E10 4PE London"
+          addressContent="El Trovador 4285, Las Condes, Santiago, Chile"
           ><Icon name="mapPin" />
         </ContactIconBlock>
 
         <ContactIconBlock
-          heading="Contact us by email"
-          content="Prefer the written word? Drop us an email at"
+          heading="Contáctanos por email"
+          content="Envíanos un correo electrónico"
           isLinkVisible={true}
-          linkTitle="support@screwfast.uk"
+          linkTitle="contacto@fuix.cl"
           linkURL="#"
           ><Icon name="envelopeOpen" />
         </ContactIconBlock>

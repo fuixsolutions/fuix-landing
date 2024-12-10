@@ -5,11 +5,6 @@ import { servicesData, successStoriesData } from "@data/mega_link";
 import type { CollectionEntry } from "astro:content";
 
 const { productLocale = "" } = Astro.props;
-
-interface Props {
-  product: CollectionEntry<"services">;
-  productLocale?: string;
-}
 ---
 
 <div
@@ -42,28 +37,6 @@ interface Props {
                 <div class="grow">
                   <p class="font-medium text-neutral-800 dark:text-neutral-200">
                     {data.title}
-                  </p>
-                  <p class="text-sm text-neutral-500 group-hover:text-neutral-800 dark:text-neutral-400 dark:group-hover:text-neutral-200">
-                    {data.description}
-                  </p>
-                </div>
-              </a>
-            ))
-        }
-      </div>
-
-      <div class="mx-1 flex flex-col md:mx-0">
-        {
-          servicesData &&
-            servicesData.slice(3, 6).map((data) => (
-              <a
-                class="group flex gap-x-5 rounded-lg p-4 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-500/10"
-                href={data.url}
-              >
-                <Icon name={data.icon} class="mt-1 size-5 flex-shrink-0" />
-                <div class="grow">
-                  <p class="font-medium text-neutral-800 dark:text-neutral-200">
-                    {data.title} - {data}
                   </p>
                   <p class="text-sm text-neutral-500 group-hover:text-neutral-800 dark:text-neutral-400 dark:group-hover:text-neutral-200">
                     {data.description}
