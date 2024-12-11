@@ -1,26 +1,25 @@
 // An array of links for navigation bar
 const navBarLinks = [
-  { name: "Home", url: "/" },
-  { name: "Servicios", url: "/services" },
-  // { name: "Blog", url: "/blog" },
-  { name: "Contacto", url: "/contact" },
+  { name: "Home", url: "/es/" },
+  { name: "Servicios", url: "/es/services" },
+  // { name: "Blog", url: "/es/blog" },
+  { name: "Contacto", url: "/es/contact" },
 ];
 // An array of links for footer
 const footerLinks = [
   {
     section: "Empresa",
     links: [
-      // { name: "Preguntas frecuentes", url: "/#faqs" },
-      { name: "Services", url: "/services" },
-      { name: "Contacto", url: "/contact" },
+      { name: "Services", url: "/es/services" },
+      { name: "Contacto", url: "/es/contact" },
     ],
   },
   {
     section: "Servicios",
     links: [
-      { name: "Low Code / No Code", url: "/services/low-code-no-code" },
-      { name: "DevOps", url: "/services/devops" },
-      { name: "Productos Mínimos Viables", url: "/services/mvp" },
+      { name: "Low Code / No Code", url: "/es/services/low-code-no-code" },
+      { name: "DevOps", url: "/es/services/devops" },
+      { name: "Productos Mínimos Viables", url: "/es/services/mvp" },
       // { name: "Blog", url: "/blog" },
     ],
   },

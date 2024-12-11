@@ -9,19 +9,19 @@ import BrandLogo from "@components/BrandLogo.astro";
 import { SITE } from "@data/constants";
 
 // Select the correct translation based on the page's lang prop:
-const strings = Astro.currentLocale === "fr" ? frStrings : enStrings;
+const strings = Astro.currentLocale === "es" ? frStrings : enStrings;
 
 // Define the variables that will be used in this component
 const sectionThreeTitle: string =
-  Astro.currentLocale === "fr"
-    ? "Rester à jour"
+  Astro.currentLocale === "es"
+    ? "Fullstack Development | User Experience | User Interface"
     : "Fullstack Development | User Experience | User Interface";
 const sectionThreeContent: string =
-  Astro.currentLocale === "fr"
-    ? "Restez informé des derniers outils et des offres exclusives."
-    : "Fuix es un emprendimiento de desarrollo de software, enfocado en la creación de soluciones digitales.";
+  Astro.currentLocale === "es"
+    ? "Somos un emprendimiento de desarrollo de software, enfocado en la creación de soluciones digitales."
+    : "We are a software development startup, focused on creating digital solutions.";
 const crafted: string =
-  Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafted by";
+  Astro.currentLocale === "es" ? "Hecho por" : "Crafted by";
 ---
 
 <footer class="w-full bg-neutral-300 dark:bg-neutral-900">

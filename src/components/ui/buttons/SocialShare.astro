@@ -3,7 +3,7 @@ import Icon from "@components/ui/icons/Icon.astro";
 // Destructure the properties from Astro.props
 const {
   pageTitle,
-  title = Astro.currentLocale === "fr" ? "Partager" : "Share",
+  title = Astro.currentLocale === "es" ? "Partager" : "Share",
 } = Astro.props;
 
 // Define TypeScript interface for the properties
@@ -58,7 +58,7 @@ const socialPlatforms: SocialPlatform[] = [
       {
         socialPlatforms.map((platform) => (
           <a
-            class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-200 focus:bg-neutral-100  focus:outline-none dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 "
+            class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-200 focus:bg-neutral-100 focus:outline-none dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
             href={platform.url}
           >
             <Icon name={platform.svg} />

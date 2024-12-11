@@ -1,38 +1,37 @@
-
+// An array of links for navigation bar
 const navBarLinks = [
-  { name: "Accueil", url: "/fr" },
-  { name: "Produits", url: "/fr/products" },
-  { name: "Services", url: "/fr/services" },
-  { name: "Blog", url: "/fr/blog" },
-  { name: "Contact", url: "/fr/contact" },
+  { name: "Home", url: "/" },
+  { name: "Servicios", url: "/services" },
+  // { name: "Blog", url: "/blog" },
+  { name: "Contacto", url: "/contact" },
 ];
-
+// An array of links for footer
 const footerLinks = [
   {
-    section: "Écosystème",
+    section: "Empresa",
     links: [
-      { name: "Documentation", url: "/fr/welcome-to-docs/" },
-      { name: "Outils et Équipements", url: "/fr/products" },
-      { name: "Services de Construction", url: "/fr/services" },
+      // { name: "Preguntas frecuentes", url: "/#faqs" },
+      { name: "Services", url: "/services" },
+      { name: "Contacto", url: "/contact" },
     ],
   },
   {
-    section: "Société",
+    section: "Servicios",
     links: [
-      { name: "À propos de nous", url: "#" },
-      { name: "Blog", url: "/fr/blog" },
-      { name: "Carrières", url: "#" },
-      { name: "Clients", url: "#" },
+      { name: "Low Code / No Code", url: "/services/low-code-no-code" },
+      { name: "DevOps", url: "/services/devops" },
+      { name: "Productos Mínimos Viables", url: "/services/mvp" },
+      // { name: "Blog", url: "/blog" },
     ],
   },
 ];
-
+// An object of links for social icons
 const socialLinks = {
-  facebook: "#",
-  x: "#",
-  github: "https://github.com/mearashadowfax/ScrewFast",
-  google: "#",
-  slack: "#",
+  facebook: "https://www.facebook.com/",
+  x: "https://twitter.com/",
+  github: "https://github.com/fuixsolutions",
+  google: "https://www.google.com/",
+  slack: "https://slack.com/",
 };
 
 export default {
