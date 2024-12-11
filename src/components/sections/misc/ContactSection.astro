@@ -112,15 +112,17 @@ const formSubTitle: string =
 </section>
 <script>
   const localUrl = window.location.href;
-  document
-    .getElementById("contactForm")
-    .addEventListener("submit", async (event) => {
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       const errorDiv = document.getElementById("error");
       const formDiv = document.getElementById("contactForm");
-      errorDiv.textContent = "";
+      if (errorDiv) {
+        errorDiv.textContent = "";
+      }
 
-      const formData = new FormData(event.target);
+      const formData = new FormData(event.target as HTMLFormElement);
       let dataFormatted = Object.fromEntries(formData.entries());
       dataFormatted.service = localUrl;
       dataFormatted.message = dataFormatted["hs-about-contacts"];
@@ -145,13 +147,20 @@ const formSubTitle: string =
         );
 
         if (response.ok) {
-          formDiv.remove();
+          if (formDiv) {
+            formDiv.remove();
+          }
           window.location.href = "/thank-you";
         } else {
-          errorDiv.textContent = "Failed to submit the form.";
+          if (errorDiv) {
+            errorDiv.textContent = "Failed to submit the form.";
+          }
         }
       } catch (error) {
-        errorDiv.textContent = "An error occurred while submitting the form.";
+        if (errorDiv) {
+          errorDiv.textContent = "An error occurred while submitting the form.";
+        }
       }
     });
+  }
 </script>
