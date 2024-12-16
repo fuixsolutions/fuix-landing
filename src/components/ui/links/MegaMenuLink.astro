@@ -2,9 +2,14 @@
 import { Image } from "astro:assets";
 import Icon from "../icons/Icon.astro";
 import { servicesData, successStoriesData } from "@data/mega_link";
+import { servicesDataEs, successStoriesDataEs } from "@data/es/mega_link";
 import type { CollectionEntry } from "astro:content";
 
-const { productLocale = "" } = Astro.props;
+const productLocale = Astro.currentLocale;
+let dataInput = servicesData;
+productLocale === "es"
+  ? (dataInput = servicesDataEs)
+  : (dataInput = servicesData);
 ---
 
 <div
@@ -12,9 +17,11 @@ const { productLocale = "" } = Astro.props;
 >
   <button type="button" class="flex items-center">
     <a
-      href="/services"
+      href={productLocale && productLocale !== "en"
+        ? `/${productLocale}/services/`
+        : `/services/`}
       class="rounded-lg text-base font-medium text-neutral-600 outline-none ring-zinc-500 hover:text-neutral-500 focus-visible:ring dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-neutral-500 dark:focus:outline-none md:py-3 md:text-sm 2xl:text-base"
-      >Servicios</a
+      >{productLocale == "en" ? "Services" : "Servicios"}</a
     >
     <Icon name="chevronDown" />
   </button>
@@ -25,8 +32,8 @@ const { productLocale = "" } = Astro.props;
     <div class="gap-4 md:grid md:grid-cols-1 lg:grid-cols-1">
       <div class="mx-1 flex flex-col md:mx-0">
         {
-          servicesData &&
-            servicesData.slice(0, 3).map((data) => (
+          dataInput &&
+            dataInput.slice(0, 3).map((data) => (
               <a
                 class="group flex gap-x-5 rounded-lg p-4 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-500/10"
                 href={

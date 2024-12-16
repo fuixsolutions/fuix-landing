@@ -5,12 +5,12 @@ import NavLink from "@components/ui/links/NavLink.astro";
 import MegaMenuLink from "@components/ui/links/MegaMenuLink.astro";
 import Authentication from "../misc/Authentication.astro";
 import enStrings from "@utils/navigation.ts";
-import frStrings from "@utils/fr/navigation.ts";
+import esStrings from "@utils/es/navigation.ts";
 import BrandLogo from "@components/BrandLogo.astro";
 import LanguagePicker from "@components/ui/LanguagePicker.astro";
 
 // Select the correct translation based on the page's lang prop:
-const strings = Astro.currentLocale === "es" ? frStrings : enStrings;
+const strings = Astro.currentLocale === "es" ? esStrings : enStrings;
 const homeUrl = Astro.currentLocale === "es" ? "/es" : "/";
 ---
 
@@ -89,7 +89,7 @@ const homeUrl = Astro.currentLocale === "es" ? "/es" : "/";
         <!-- Navigation links and Authentication component -->
         {
           strings.navBarLinks.map((link) => {
-            if (link.name === "Servicios") {
+            if (link.name === "Servicios" || link.name === "Services") {
               return <MegaMenuLink />;
             } else {
               return <NavLink url={link.url} name={link.name} />;
@@ -98,7 +98,7 @@ const homeUrl = Astro.currentLocale === "es" ? "/es" : "/";
         }
 
         <!-- <Authentication /> -->
-        <!-- <LanguagePicker /> -->
+        <LanguagePicker />
         <!-- ThemeIcon component specifically for larger screens -->
         <!-- <span class="hidden md:inline-block">
           <ThemeIcon />

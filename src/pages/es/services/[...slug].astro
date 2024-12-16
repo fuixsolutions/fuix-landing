@@ -20,12 +20,12 @@ declare global {
 
 export async function getStaticPaths() {
   const productEntries = await getCollection("services", ({ id }) =>
-    id.startsWith("en/")
+    id.startsWith("es/")
   );
   return productEntries.map((product) => {
-    const slugWithoutLang = product.slug.replace(/^en\//, ""); // Remove the "en/" prefix
+    const slugWithoutLang = product.slug.replace(/^es\//, ""); // Remove the "fr/" prefix
     return {
-      params: { slug: slugWithoutLang },
+      params: { lang: "es", slug: slugWithoutLang },
       props: { product },
     };
   });
@@ -57,9 +57,9 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
     >
       <div id="fadeInUp">
         <h1
-          class="font-header block text-4xl font-bold tracking-tighter text-yellow-500 dark:text-yellow-400 sm:text-5xl md:text-6xl lg:text-7xl"
+          class="block font-header text-4xl font-bold tracking-tighter text-yellow-500 dark:text-yellow-400 sm:text-5xl md:text-6xl lg:text-7xl"
         >
-          {product.data.title}
+          {product.data.title} - ES
         </h1>
         <p class="text-lg text-neutral-600 dark:text-neutral-400">
           {product.data.description}
@@ -97,7 +97,7 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
         <div class="space-y-6 sm:space-y-8">
           <div class="space-y-2 md:space-y-4">
             <h2
-              class="font-header text-balance text-3xl font-bold text-neutral-800 dark:text-neutral-200 lg:text-4xl"
+              class="text-balance font-header text-3xl font-bold text-neutral-800 dark:text-neutral-200 lg:text-4xl"
             >
               {product.data.longDescription.title}
             </h2>
@@ -141,7 +141,7 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
         <div class="space-y-6 sm:space-y-8">
           <div class="space-y-2 md:space-y-4">
             <h2
-              class="font-header text-balance text-3xl font-bold text-gray-800 lg:text-4xl"
+              class="text-balance font-header text-3xl font-bold text-gray-800 lg:text-4xl"
             >
               Nuestras soluciones <span
                 class="text-yellow-500 dark:text-yellow-400"

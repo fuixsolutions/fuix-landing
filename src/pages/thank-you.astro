@@ -16,8 +16,7 @@ type Translations = {
   };
 };
 
-// Define variables for page content
-const defaultLang: TranslationKeys = "es";
+// Define translations
 const translations: Translations = {
   en: {
     pageTitle: `Thank You`,
@@ -35,14 +34,9 @@ const translations: Translations = {
   },
 };
 
-// Determine language from the URL
-const urlPath = Astro.url.pathname;
-const langCodeMatch = urlPath.match(/^\/(en|fr)\//);
-const lang: TranslationKeys = langCodeMatch
-  ? (langCodeMatch[1] as TranslationKeys)
-  : defaultLang;
-
-const { pageTitle, subTitle, content, btnTitle } = translations[lang];
+// Retrieve current locale
+const locale = Astro.currentLocale as TranslationKeys;
+const { pageTitle, subTitle, content, btnTitle } = translations[locale];
 ---
 
 <MainLayout title={pageTitle}>
@@ -80,9 +74,18 @@ const { pageTitle, subTitle, content, btnTitle } = translations[lang];
 
 <!-- JavaScript code to handle going back to the previous page -->
 <script>
-  const goBackButton = document.getElementById("go-back") as HTMLButtonElement;
+  const goBackButton = document.getElementById("go-back");
 
-  goBackButton.addEventListener("click", () => {
-    history.back();
+  if (goBackButton) {
+    goBackButton.addEventListener("click", () => {
+      history.back();
+    });
+  }
+</script>
+<!-- Google tag (gtag.js) -->
+<!-- Event snippet for DevOps services conversion page -->
+<script is:inline>
+  gtag("event", "conversion", {
+    send_to: "AW-16652576469/xW3gCOvQh-QZENXNyIQ-",
   });
 </script>

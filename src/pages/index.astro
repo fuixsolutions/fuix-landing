@@ -6,10 +6,8 @@ import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
-import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
-import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
 import heroImage from "@images/hero-image.png";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
@@ -21,58 +19,47 @@ import tools from "@images/automated-tools.avif";
 import devops from "@images/devops-monitor.png";
 import dashboard from "@images/dashboard-image.avif";
 
-const avatarSrcs: Array<string> = [
-  "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
-  "https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
-  "https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80",
-  "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
-];
+const avatarSrcs: Array<string> = []; // Empty array for avatars
 ---
 
 <MainLayout>
-  <!-- <AnnouncementBanner
-    btnId="dismiss-button"
-    btnTitle="Explore ScrewFast on GitHub"
-    url="https://github.com/mearashadowfax/ScrewFast"
-  /> -->
-
   <HeroSection
-    title=`Acelera tu crecimiento con <span
-        class="text-yellow-500 dark:text-yellow-400">Soluciones Digitales Inteligentes</span>`
-    subTitle=`Integramos y optimizamos herramientas digitales para que puedas enfocarte en lo que realmente importa: <strong>tu negocio.</strong>`
-    primaryBtn="Nuestros Servicios"
+    title=`Accelerate your growth with <span
+        class="text-yellow-500 dark:text-yellow-400">Smart Digital Solutions</span>`
+    subTitle=`We integrate and optimize digital tools so you can focus on what truly matters: <strong>your business.</strong>`
+    primaryBtn="Our Services"
     primaryBtnURL="/services"
-    secondaryBtn="Contáctenos"
+    secondaryBtn="Contact Us"
     secondaryBtnURL="/contact"
     withReview={false}
     avatars={avatarSrcs}
     rating=`<span class="font-bold">4.8</span> / 5`
     starCount={4}
-    reviews=`<span class="font-bold">200+</span> Soluciones Implementadas`
+    reviews=`<span class="font-bold">200+</span> Implemented Solutions`
     src={heroImage}
     alt="Cloud environment with digital devices"
   />
 
   <ClientsSection
-    title="Confían en nosotros"
-    subTitle="Grandes empresas y pequeños emprendimientos han confiado en nuestra expertise."
+    title="Trusted by Our Clients"
+    subTitle="Both large enterprises and small businesses rely on our expertise."
   />
 
   <FeaturesGeneral
-    title="Tecnología corporativa a tu alcance"
-    subTitle="Construimos soluciones digitales integrando metodologías ágiles y tecnología de punta."
+    title="Corporate Technology at Your Fingertips"
+    subTitle="We build digital solutions by integrating agile methodologies and cutting-edge technology."
     src={mvp}
     alt="Fuix Low Code"
     features={features}
   />
 
   <FeaturesNavs
-    title=`Podemos guiarte a través del proceso de creación de una <span class="text-yellow-500 dark:text-yellow-400">solución digital</span> que cumpla con las expectativas de tu negocio.`
+    title=`We can guide you through the process of creating a <span class="text-yellow-500 dark:text-yellow-400">digital solution</span> that meets your business expectations.`
     tabs={[
       {
         heading: "Low Code / No Code",
         content:
-          "Construye e integra aplicaciones con un mínimo de codificación, permitiendo a tu equipo crear soluciones de forma más rápida y eficiente.",
+          "Build and integrate applications with minimal coding, allowing your team to create solutions faster and more efficiently.",
         svg: "lowcode",
         src: lowcode,
         alt: "Low Code / No Code",
@@ -82,7 +69,7 @@ const avatarSrcs: Array<string> = [
       {
         heading: "DevOps",
         content:
-          "Aprovecha el poder de la automatización y la colaboración para optimizar tu proceso de desarrollo y entregar software de alta calidad.",
+          "Harness the power of automation and collaboration to optimize your development process and deliver high-quality software.",
         svg: "nas",
         src: devops,
         alt: "DevOps",
@@ -90,61 +77,20 @@ const avatarSrcs: Array<string> = [
         link: "/services/devops",
       },
       {
-        heading: "Productos Mínimos Viables",
+        heading: "Minimum Viable Products",
         content:
-          "Lanza tu producto de forma rápida y rentable, validando hipótesis acotadas y mejorando continuamente en base a la retroalimentación de tus usuarios.",
+          "Launch your product quickly and cost-effectively, validating focused hypotheses and continuously improving based on user feedback.",
         svg: "rocket",
         src: mvp,
-        alt: "Productos Mínimos Viables",
+        alt: "Minimum Viable Products",
         link: "/services/mvp",
       },
     ]}
   />
 
-  <!-- <TestimonialsSection
-    title="Fast-Track Your Projects"
-    subTitle="At ScrewFast, we ensure a swift start with instant account setup. Experience the speed of construction redefined."
-    ;
-    testimonials={[
-      {
-        content:
-          "ScrewFast dramatically boosted our project efficiency. Setup was instant, and their rapid response times are phenomenal. Truly a game-changer in hardware and construction support!",
-        author: "Samantha Ruiz",
-        role: "Chief Operating Officer | ConstructIt Inc.",
-        avatarSrc:
-          "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-      },
-    ]}
-    statistics={[
-      {
-        count: "70k+",
-        description:
-          "customers equipped — from DIY to major construction firms",
-      },
-      {
-        count: "35%",
-        description:
-          "uptick in project efficiency with ScrewFast tools and services",
-      },
-      {
-        count: "15.3%",
-        description:
-          "reduction in maintenance costs reported by long-term clients",
-      },
-      {
-        count: "2x",
-        description: "quicker assembly using innovative fastening solutions",
-      },
-    ]}
-  />
-
-  <PricingSection pricing={pricing} /> -->
-
-  <!-- <FAQ title="Preguntas frecuentes" faqs={faqs} /> -->
-
   <HeroSectionAlt
-    title="Construyamos juntos"
-    subTitle="Hablemos sobre cómo podemos ayudarte a alcanzar tus objetivos."
+    title="Let's Build Together"
+    subTitle="Let's talk about how we can help you achieve your goals."
     url="/contact"
   />
 </MainLayout>

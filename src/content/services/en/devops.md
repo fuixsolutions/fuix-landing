@@ -1,10 +1,10 @@
 ---
 title: "DevOps"
-description: "Revoluciona tu desarrollo de software con DevOps"
+description: "Revolutionize your software development with DevOps"
 main:
   id: 2
   content: |
-    Velocidad, eficiencia y escalabilidad: desbloquea todo el potencial de tu infraestructura.
+    Speed, efficiency, and scalability: unlock the full potential of your infrastructure.
   imgCard: "@/images/icon.png"
   imgMain: "@/images/service-devops.png"
   imgAlt: "Mockup boxes of assorted screw set"
@@ -19,29 +19,29 @@ tabs:
     dataTab: "#tabs-with-card-3"
     title: "Blueprints"
 longDescription:
-  title: "¿Qué es DevOps?"
+  title: "What is DevOps?"
   subTitle: |
-    DevOps es una metodología que combina desarrollo de software (Dev) y operaciones de TI (Ops) para mejorar la colaboración, automatizar procesos y acelerar la entrega de soluciones tecnológicas.
+    DevOps is a methodology that combines software development (Dev) and IT operations (Ops) to improve collaboration, automate processes, and accelerate the delivery of technological solutions.
   btnTitle: "Contact sales to learn more"
   btnURL: "#"
 descriptionList:
-  - title: "Automatización de Infraestructura"
-    subTitle: "Reduce errores humanos y tiempo en tareas repetitivas con automatización de infraestructura."
-  - title: "Escalabilidad"
-    subTitle: "Crea entornos cloud escalables con gestión eficiente de recursos."
-  - title: "Enfoque en seguridad"
-    subTitle: "Implementa las mejores prácticas de seguridad y cumplimiento desde el inicio del desarrollo hasta el lanzamiento."
+  - title: "Infrastructure Automation"
+    subTitle: "Reduce human errors and save time on repetitive tasks with infrastructure automation."
+  - title: "Scalability"
+    subTitle: "Create scalable cloud environments with efficient resource management."
+  - title: "Security Focus"
+    subTitle: "Implement best practices for security and compliance from development to deployment."
 specificationsLeft:
-  - title: "Configuración de canal CI/CD"
-    subTitle: "Canales automatizados para una entrega de software más rápida y fiable con mínima intervención manual, garantizando actualizaciones fluidas y reducción de riesgos de despliegue."
-  - title: "Infraestructura como código (IaC)"
-    subTitle: "Automatiza la gestión de recursos cloud mediante código (Terraform, Ansible), permitiendo una infraestructura escalable, repetible con control de versiones y configuración más rápida."
-  - title: "Gestión de servicios cloud (AWS, Azure, GCP)"
-    subTitle: "Administra y optimiza entornos cloud en AWS, Azure y GCP, enfocándote en la provisión de recursos, eficiencia de costos y escalabilidad."
-  - title: "Soluciones de monitoreo y logging"
-    subTitle: "Implementa monitoreo y logging en tiempo real (Prometheus, Grafana, ELK) para un mejor seguimiento del rendimiento, resolución de problemas y prevención de incidencias."
-  - title: "Integración DevSecOps"
-    subTitle: "Incorpora seguridad en el canal DevOps, automatizando comprobaciones para detectar vulnerabilidades tempranas y garantizar el cumplimiento de estándares de seguridad."
+  - title: "CI/CD Pipeline Configuration"
+    subTitle: "Automated pipelines for faster, more reliable software delivery with minimal manual intervention, ensuring smooth updates and reduced deployment risks."
+  - title: "Infrastructure as Code (IaC)"
+    subTitle: "Automate cloud resource management through code (Terraform, Ansible), enabling scalable, repeatable infrastructure with version control and faster configuration."
+  - title: "Cloud Service Management (AWS, Azure, GCP)"
+    subTitle: "Manage and optimize cloud environments on AWS, Azure, and GCP, focusing on resource provisioning, cost efficiency, and scalability."
+  - title: "Monitoring and Logging Solutions"
+    subTitle: "Implement real-time monitoring and logging (Prometheus, Grafana, ELK) for better performance tracking, problem resolution, and incident prevention."
+  - title: "DevSecOps Integration"
+    subTitle: "Embed security in the DevOps pipeline, automating checks to detect vulnerabilities early and ensure compliance with security standards."
 tableData:
   - feature: ["Specification", "Value"]
     description:

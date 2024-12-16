@@ -1,5 +1,5 @@
 ---
-import { languages } from "@utils//ui";
+import { languages } from "@utils/ui";
 import Icon from "./icons/Icon.astro";
 ---
 
@@ -82,8 +82,10 @@ import Icon from "./icons/Icon.astro";
 
         // Rebuild the URL path
         url.pathname = "/" + currentPath.join("/");
+        // sometimes, it will be like //services/. fix it:
+        url.pathname = url.pathname.replace(/\/\//g, "/");
 
-        console.log("Final URL:", url.toString());
+        // console.log("Final URL:", url.toString());
 
         // Navigate to the updated URL
         window.location.href = url.toString();

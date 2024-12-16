@@ -26,7 +26,7 @@ export default defineConfig({
     tailwind(),
     sitemap({
       i18n: {
-        defaultLocale: "es", // All urls that don't contain `fr` after `https://fuix.cl/` will be treated as default locale, i.e. `en`
+        defaultLocale: "en", // All urls that don't contain `fr` after `https://fuix.cl/` will be treated as default locale, i.e. `en`
         locales: {
           en: "en",
           es: "es",
@@ -43,46 +43,41 @@ export default defineConfig({
       // If both an Astro and Starlight i18n configurations are provided, an error is thrown.
       locales: {
         root: {
-          label: "Español",
-          lang: "es",
+          label: "English",
+          lang: "en",
         },
-        de: { label: "Deutsch", lang: "de" },
         es: { label: "Español", lang: "es" },
-        fa: { label: "Persian", lang: "fa", dir: "rtl" },
-        fr: { label: "Français", lang: "es" },
-        ja: { label: "日本語", lang: "ja" },
-        "zh-cn": { label: "简体中文", lang: "zh-CN" },
       },
       // https://starlight.astro.build/guides/sidebar/
-      sidebar: [
-        {
-          label: "Quick Start Guides",
-          translations: {
-            de: "Schnellstartanleitungen",
-            es: "Guías de Inicio Rápido",
-            fa: "راهنمای شروع سریع",
-            fr: "Guides de Démarrage Rapide",
-            ja: "クイックスタートガイド",
-            "zh-cn": "快速入门指南",
-          },
-          autogenerate: { directory: "guides" },
-        },
-        {
-          label: "Tools & Equipment",
-          items: [
-            { label: "Tool Guides", link: "tools/tool-guides/" },
-            { label: "Equipment Care", link: "tools/equipment-care/" },
-          ],
-        },
-        {
-          label: "Construction Services",
-          autogenerate: { directory: "construction" },
-        },
-        {
-          label: "Advanced Topics",
-          autogenerate: { directory: "advanced" },
-        },
-      ],
+      // sidebar: [
+      //   {
+      //     label: "Quick Start Guides",
+      //     translations: {
+      //       de: "Schnellstartanleitungen",
+      //       es: "Guías de Inicio Rápido",
+      //       fa: "راهنمای شروع سریع",
+      //       fr: "Guides de Démarrage Rapide",
+      //       ja: "クイックスタートガイド",
+      //       "zh-cn": "快速入门指南",
+      //     },
+      //     autogenerate: { directory: "guides" },
+      //   },
+      //   {
+      //     label: "Tools & Equipment",
+      //     items: [
+      //       { label: "Tool Guides", link: "tools/tool-guides/" },
+      //       { label: "Equipment Care", link: "tools/equipment-care/" },
+      //     ],
+      //   },
+      //   {
+      //     label: "Construction Services",
+      //     autogenerate: { directory: "construction" },
+      //   },
+      //   {
+      //     label: "Advanced Topics",
+      //     autogenerate: { directory: "advanced" },
+      //   },
+      // ],
       social: {
         github: "https://github.com/mearashadowfax/ScrewFast",
       },

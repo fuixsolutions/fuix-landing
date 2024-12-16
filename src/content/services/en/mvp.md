@@ -1,10 +1,10 @@
 ---
-title: "Productos Mínimos Viables (MVP)"
-description: "De la idea al mercado: te ayudaremos a construir un MVP escalable en poco tiempo."
+title: "Minimum Viable Products (MVP)"
+description: "From idea to market: we'll help you build a scalable MVP in no time."
 main:
   id: 2
   content: |
-    Lanza tu MVP Rápido
+    Launch Your MVP Quickly
   imgCard: "@/images/mvp-steps.png"
   imgMain: "@/images/services-mvp.png"
   imgAlt: "MVP Software"
@@ -19,30 +19,30 @@ tabs:
     dataTab: "#tabs-with-card-3"
     title: "Blueprints"
 longDescription:
-  title: "¿Por qué elegir un MVP?"
+  title: "Why Choose an MVP?"
   subTitle: |
-    Un MVP te permite validar hipótesis de manera rápida y eficiente, reduciendo riesgos y costos asociados al desarrollo de software.
+    An MVP allows you to quickly and efficiently validate hypotheses, reducing the risks and costs associated with software development.
   btnTitle: "Contact sales to learn more"
   btnURL: "#"
 descriptionList:
-  - title: "Automatización de Infraestructura"
-    subTitle: "Iterar rápidamente basándote en retroalimentación real de usuarios."
-  - title: "Escalabilidad"
-    subTitle: "Ajustar y priorizar funcionalidades según las necesidades del mercado."
-  - title: "Enfoque en seguridad"
-    subTitle: "Evitar desarrollar características innecesarias o costosas."
-  - title: "Enfoque en seguridad"
-    subTitle: "Maximizar la inversión al centrarse en lo que realmente agrega valor."
-  - title: "Enfoque en seguridad"
-    subTitle: "Probar ideas con flexibilidad antes de comprometerse con un producto final."
+  - title: "Infrastructure Automation"
+    subTitle: "Iterate quickly based on real user feedback."
+  - title: "Scalability"
+    subTitle: "Adjust and prioritize features according to market needs."
+  - title: "Security Focus"
+    subTitle: "Avoid developing unnecessary or costly features."
+  - title: "Security Focus"
+    subTitle: "Maximize your investment by focusing on what truly adds value."
+  - title: "Security Focus"
+    subTitle: "Test ideas flexibly before committing to a final product."
 specificationsLeft:
-  - title: "Desarrollo Frontend y Backend"
+  - title: "Frontend and Backend Development"
     subTitle: ""
-  - title: "Prototipado y Wireframing"
+  - title: "Prototyping and Wireframing"
     subTitle: ""
-  - title: "Integraciones con APIs de Terceros"
+  - title: "Third-Party API Integrations"
     subTitle: ""
-  - title: "Soluciones MVP Basadas en la Nube"
+  - title: "Cloud-Based MVP Solutions"
     subTitle: ""
 tableData:
   - feature: ["Specification", "Value"]
