@@ -29,13 +29,12 @@ const product: CollectionEntry<"services">[] = (
 
 // Define variables for page content
 const title: string = "Servicios";
-const subTitle: string =
-  "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts. Each of our products is crafted with precision and built to last, ensuring you have the right tool for every job.";
+const subTitle: string = "";
 
 // Testimonial data that will be rendered in the component
 const testimonials = [];
 
-const pageTitle: string = `Products | ${SITE.title}`;
+const pageTitle: string = `Services | ${SITE.title}`;
 ---
 
 <MainLayout
@@ -43,19 +42,19 @@ const pageTitle: string = `Products | ${SITE.title}`;
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/products",
-    url: "https://screwfast.uk/products",
-    name: "Hardware Tools | ScrewFast",
+    "@id": "https://fui.cl/services",
+    url: "https://fui.cl/services",
+    name: "Soluciones Digitales | Fuix",
     description:
-      "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts.",
+      "Soluciones digitales innovadoras, diseñadas para maximizar el impacto y adaptarse a las necesidades de tu negocio.",
     isPartOf: {
       "@type": "WebSite",
-      url: "https://screwfast.uk",
-      name: "ScrewFast",
+      url: "https://fuix.cl",
+      name: "Fuix",
       description:
-        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+        "Fuix es un emprendimiento de desarrollo de software, enfocado en la creación de soluciones digitales.",
     },
-    inLanguage: "en-US",
+    inLanguage: "es-ES",
   }}
 >
   <div
@@ -118,7 +117,7 @@ const pageTitle: string = `Products | ${SITE.title}`;
         src: lowcode,
         alt: "Low Code / No Code",
         first: true,
-        link: "/services/low-code-no-code",
+        link: "/es/services/low-code-no-code",
       },
       {
         heading: "DevOps",
@@ -128,7 +127,7 @@ const pageTitle: string = `Products | ${SITE.title}`;
         src: devops,
         alt: "DevOps",
         second: true,
-        link: "/services/devops",
+        link: "/es/services/devops",
       },
       {
         heading: "Productos Mínimos Viables",
@@ -137,7 +136,7 @@ const pageTitle: string = `Products | ${SITE.title}`;
         svg: "rocket",
         src: mvp,
         alt: "Productos Mínimos Viables",
-        link: "/services/mvp",
+        link: "/es/services/mvp",
       },
     ]}
   />
