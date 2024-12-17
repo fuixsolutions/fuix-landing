@@ -11,11 +11,11 @@ import { SITE } from "@data/constants";
 // Get all blogs post in French and sort them based on publish date
 
 const frenchBlogEntries = await getCollection("blog", ({ id }) => {
-  return id.startsWith("fr/");
+  return id.startsWith("es/");
 });
 
 const frenchInsightsEntries = await getCollection("insights", ({ id }) => {
-  return id.startsWith("fr/");
+  return id.startsWith("es/");
 });
 
 const blogPosts: CollectionEntry<"blog">[] = frenchBlogEntries.sort(
@@ -30,12 +30,11 @@ const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
 const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 
 // Define variables for page content
-const title: string = "Votre Passerelle vers l'Excellence en Construction";
+const title: string = "Blog de Fuix";
 const subTitle: string =
-  "Explorez les dernières actualités, astuces et analyses de ScrewFast pour améliorer vos projets de construction. Des mises en avant de produits aux stratégies de gestion de projet, notre blog est votre ressource incontournable pour tout ce qui concerne les outils et la construction.";
+  "Explora las últimas novedades, consejos y técnicas de nuestro equipo de desarrollo.";
 const secondTitle: string = "Perspectives";
-const secondSubTitle: string =
-  "Restez à jour avec les dernières tendances et évolutions de l'industrie de la construction grâce aux analyses de l'équipe d'experts de ScrewFast.";
+const secondSubTitle: string = "";
 
 const pageTitle: string = `Blog | ${SITE.title}`;
 ---
@@ -46,17 +45,17 @@ const pageTitle: string = `Blog | ${SITE.title}`;
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/es/blog",
-    url: "https://screwfast.uk/es/blog",
-    name: "Blog | ScrewFast",
+    "@id": "https://fuix.cl/es/blog",
+    url: "https://fuix.cl/es/blog",
+    name: "Blog | Fuix",
     description:
-      "Restez informé des dernières tendances et évolutions dans le secteur de la construction avec les analyses de l'équipe d'experts de ScrewFast.",
+      "Explora las últimas novedades, consejos y técnicas de nuestro equipo de desarrollo.",
     isPartOf: {
       "@type": "WebSite",
-      url: "https://screwfast.uk/fr",
-      name: "ScrewFast",
+      url: "https://fuix.cl/es",
+      name: "Fuix",
       description:
-        "ScrewFast propose des outils matériels de premier ordre et des services de construction experts pour répondre à tous vos besoins de projet.",
+        "Fuix es un emprendimiento de desarrollo conformado de profesionales con más de 20 años de experiencia,  especializada en la creación de soluciones digitales para empresas y emprendedores.",
     },
     inLanguage: "es",
   }}

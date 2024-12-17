@@ -15,10 +15,10 @@ import { SITE } from "@data/constants";
 // Update getStaticPaths for French posts
 export async function getStaticPaths() {
   const blogPosts = await getCollection("blog", ({ id }) =>
-    id.startsWith("fr/")
+    id.startsWith("es/")
   );
   return blogPosts.map((post) => {
-    const slugWithoutLang = post.slug.replace(/^fr\//, ""); // Remove the "fr/" prefix
+    const slugWithoutLang = post.slug.replace(/^es\//, ""); // Remove the "fr/" prefix
     return {
       params: { lang: "es", slug: slugWithoutLang },
       props: { post },
@@ -31,7 +31,7 @@ const { post } = Astro.props;
 // Fetch related posts
 const blogPosts: CollectionEntry<"blog">[] = await getCollection(
   "blog",
-  ({ id }) => id.startsWith("fr/")
+  ({ id }) => id.startsWith("es/")
 );
 const relatedPosts: CollectionEntry<"blog">[] = blogPosts.filter(
   (blogEntry) => blogEntry.slug !== post.slug

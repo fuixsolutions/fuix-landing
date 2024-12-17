@@ -162,8 +162,6 @@ const formSubTitle: string =
           if (formDiv) {
             formDiv.remove();
           }
-          // window.location.href = "/thank-you";
-          // redirecto to {lang}/thank-you, lang defined in url/(en or es)/contact
           const lang = localUrl.split("/")[3];
           const redirectTo = lang === "es" ? "/es/thank-you" : "/thank-you";
           window.location.href = redirectTo;

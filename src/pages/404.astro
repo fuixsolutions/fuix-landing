@@ -35,13 +35,17 @@ const translations: Translations = {
 };
 
 // Determine language from the URL
-const urlPath = Astro.url.pathname;
-const langCodeMatch = urlPath.match(/^\/(en|fr)\//);
-const lang: TranslationKeys = langCodeMatch
-  ? (langCodeMatch[1] as TranslationKeys)
-  : defaultLang;
+// const urlPath = Astro.url.pathname;
+// const langCodeMatch = urlPath.match(/^\/(en|fr)\//);
+// const lang: TranslationKeys = langCodeMatch
+//   ? (langCodeMatch[1] as TranslationKeys)
+//   : defaultLang;
 
-const { pageTitle, subTitle, content, btnTitle } = translations[lang];
+// const { pageTitle, subTitle, content, btnTitle } = translations[lang];
+
+const locale = Astro.currentLocale as TranslationKeys;
+
+const { pageTitle, subTitle, content, btnTitle } = translations[locale];
 ---
 
 <MainLayout title={pageTitle}>
