@@ -3,27 +3,27 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import CardBlog from "@components/ui/cards/CardBlog.astro";
 import CardBlogRecent from "@components/ui/cards/CardBlogRecent.astro";
-import CardInsight from "@components/ui/cards/CardInsight.astro";
+// import CardInsight from "@components/ui/cards/CardInsight.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-// Get all blogs post in French and sort them based on publish date
+// Get all blogs post in English and sort them based on publish date
 
-const frenchBlogEntries = await getCollection("blog", ({ id }) => {
+const englishBlogEntries = await getCollection("blog", ({ id }) => {
   return id.startsWith("es/");
 });
 
-const frenchInsightsEntries = await getCollection("insights", ({ id }) => {
-  return id.startsWith("es/");
-});
+// const englishInsightsEntries = await getCollection("insights", ({ id }) => {
+//   return id.startsWith("en/");
+// });
 
-const blogPosts: CollectionEntry<"blog">[] = frenchBlogEntries.sort(
+const blogPosts: CollectionEntry<"blog">[] = englishBlogEntries.sort(
   (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 // Get all insights posts
-const insightPosts: CollectionEntry<"insights">[] = frenchInsightsEntries;
+// const insightPosts: CollectionEntry<"insights">[] = englishInsightsEntries;
 
 // Separate the most recent post from others
 const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
@@ -33,8 +33,8 @@ const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 const title: string = "Blog de Fuix";
 const subTitle: string =
   "Explora las últimas novedades, consejos y técnicas de nuestro equipo de desarrollo.";
-const secondTitle: string = "Perspectives";
-const secondSubTitle: string = "";
+// const secondTitle: string = "Perspectives";
+// const secondSubTitle: string = "";
 
 const pageTitle: string = `Blog | ${SITE.title}`;
 ---
@@ -82,20 +82,16 @@ const pageTitle: string = `Blog | ${SITE.title}`;
   <section
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
-    <!--Blog posts grid-->
     <div class="grid gap-6 lg:grid-cols-2">
-      {
-        otherPosts.map((blogEntry) => (
-          <CardBlog blogEntry={blogEntry} blogLocale="es" />
-        ))
-      }
+      <CardBlog blogEntry={mostRecentPost} />
+      {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} />)}
     </div>
   </section>
   <!--Most recent blog post-->
   <!-- <section
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
-    <CardBlogRecent blogEntry={mostRecentPost} recentBlogLocale="es" />
+    <CardBlogRecent blogEntry={mostRecentPost} />
   </section> -->
   <!--Insights section-->
   <!-- <section
@@ -114,7 +110,7 @@ const pageTitle: string = `Blog | ${SITE.title}`;
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
         insightPosts.map((insightEntry) => (
-          <CardInsight insightEntry={insightEntry} insightLocale="es" />
+          <CardInsight insightEntry={insightEntry} />
         ))
       }
     </div>
