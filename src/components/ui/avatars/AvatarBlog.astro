@@ -9,11 +9,11 @@ const { blogEntry } = Astro.props;
 interface Props {
   blogEntry: CollectionEntry<"blog">;
 }
-import crypto from "crypto";
+import SHA256 from "crypto-js/sha256";
 
 const gravatarUrl = (email: string, size: number = 80) => {
   const trimmedEmail = email.trim().toLowerCase();
-  const hash = crypto.createHash("sha256").update(trimmedEmail).digest("hex");
+  const hash = SHA256(trimmedEmail).toString();
   return `https://www.gravatar.com/avatar/${hash}?s=${size}&d=identicon`;
 };
 ---
