@@ -11,6 +11,7 @@ const footerLinks = [
     section: "Empresa",
     links: [
       { name: "Servicios", url: "/es/services" },
+      { name: "Blog", url: "/es/blog" },
       { name: "Contacto", url: "/es/contact" },
     ],
   },
@@ -20,7 +21,6 @@ const footerLinks = [
       { name: "Low Code / No Code", url: "/es/services/low-code-no-code" },
       { name: "DevOps", url: "/es/services/devops" },
       { name: "Productos Mínimos Viables", url: "/es/services/mvp" },
-      { name: "Blog", url: "/blog" },
     ],
   },
 ];

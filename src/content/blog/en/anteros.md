@@ -1,6 +1,6 @@
 ---
-title: "Anteros: Digital Transformation Without Disruption"
-description: "How Anteros optimized its sales and inventory process with a lightweight, non-intrusive solution."
+title: "Anteros: Digital Transformation Without Disruption."
+description: "How Anteros optimized its sales and inventory processes with a lightweight, non-intrusive solution."
 author: "Sabino"
 authorImage: "@/images/blog/post-1.avif"
 authorEmail: "sabinovelasquez@gmail.com"
@@ -12,17 +12,18 @@ readTime: 2
 tags: ["DevOps", "MVP", "ERP", "Automation"]
 contents:
   [
-    "**<a href='https://anteros.cl' target='_blank' class='text-orange-400'>Anteros S.A.</a>**, a leading company in the import of industrial machinery, faced a critical challenge: digitizing and optimizing its sales processes without replacing its core system, a functional but outdated Manager ERP. The initial need was clear: to create a lightweight platform that could interact with this ERP, facilitating the work of the sales team in the field, a key aspect of the forestry sector.\n",
-    "<div style='width:100%;height:0;padding-bottom:75%;position:relative;'><iframe src='https://giphy.com/embed/gZqIS1iIH37ngno2cL' width='100%' height='100%' style='position:absolute' frameBorder='0' class='giphy-embed' allowFullScreen></iframe></div>",
-    "An ambitious but necessary goal. Like any other muscle, digitization requires constant training.\nFollowing an audit, we proposed a low-risk solution as the first stage of the project: an <a class='text-orange-400' href='https://fuix.cl/es/services/mvp' target='_blank'>MVP (Minimum Viable Product)</a>.\nThe strategy was to develop a non-intrusive API (Express.js) capable of operating directly with the existing ERP data. The MVP was developed with two main focuses: **integration with the existing ERP** and **delivering value to the sales team**.\n",
-    "<div style=width:100%;height:0;padding-bottom:75%;position:relative;><iframe src=https://giphy.com/embed/G19Ul83yGtcyx1j4o1 width=100% height=100% style=position:absolute frameBorder=0 class=giphy-embed allowFullScreen></iframe></div>",
-    "The **sales portal** allowed sales representatives to check product availability, prices, and create order notes directly from the platform in real time.",
-    "We connected our Express API with WooCommerce to synchronize stock, prices, and photos as well as attachments (manuals, part diagrams, etc.), automating marketing tasks.\n",
-    "The MVP gradually gained new functionalities. After six months, we decided to share these features with Anteros' customers through a **customer portal**.\n",
-    "<div style='width:100%;height:0;padding-bottom:59%;position:relative;'><iframe src='https://giphy.com/embed/cDsDINnXE75frN2PYD' width='100%' height='100%' style='position:absolute' frameBorder='0' class='giphy-embed' allowFullScreen></iframe></div>",
-    "The **customer portal**, with an OTP (One-Time Password) authentication system linked to their Manager ERP email, allowed customers to review their purchases, order statuses, and quotes independently.\n",
-    "<div style='width:100%;height:0;padding-bottom:77%;position:relative;'><iframe src='https://giphy.com/embed/7fzyKfAX23vIy8H1Kj' width='100%' height='100%' style='position:absolute' frameBorder='0' class='giphy-embed' allowFullScreen></iframe></div>",
-    "The implementation of the MVP was a success. Thanks to its agile development and non-intrusive integration, Anteros was able to digitize its processes without disrupting daily operations. The new platform improved the mobility of the sales team, increased efficiency in order note creation, and enhanced customer satisfaction by providing transparent access to their information.\n",
-    "This success story demonstrates how an agile and solution-oriented approach can modernize critical business processes without replacing existing systems. Fuix continues to collaborate with Anteros on new stages to expand the platform's functionalities, incorporating more automation and optimization tools in future phases.",
+    "<a href='https://anteros.cl' target='_blank' class='text-orange-400'>Anteros S.A.</a>, a leading company in the industrial machinery import sector, faced a critical challenge: digitizing and optimizing its sales processes without replacing its core system, a functional but outdated Manager ERP. The initial need was clear: to create a lightweight platform that could interact with this ERP, thus facilitating the work of the sales team in the field, particularly in the forestry sector.\n",
+"<img class='rounded-3xl' src='/src/images/blog/anteros-erp.jpg' alt='Anteros ERP' class='rounded-3xl' />",
+"An ambitious but necessary goal. Like any other skill, digital transformation requires constant effort. As a result of an audit, we proposed a low-risk solution as the first stage of the project: an <a class='text-orange-400' href='https://fuix.cl/en/services/mvp' target='_blank'>MVP (Minimum Viable Product)</a>.\n\n<span class='text-3xl'>The strategy was to enable the sales team to access the ERP from the field to check products and create quotes.</span>",
+"\nWe developed a non-intrusive API (Express.js) that operates directly with the ERP, along with a portal featuring exclusive authentication for sales representatives.\n",
+"<img class='rounded-3xl' src='/src/images/blog/anteros-portalventas.jpg' alt='Anteros Sales Portal' class='rounded-3xl' />",
+"The sales portal allowed sales representatives to consult product availability, prices, discounts, and create order notes directly from the platform in real time.\n",
+"Additionally, we connected our Express API with WooCommerce to synchronize stock, prices, images, and attachments (manuals, schematics, etc.), automating Marketing tasks.\n",
+"The MVP gained new functionalities over time. After six months, we decided to share these features with Anteros' customers through a client portal.\n",
+"<img class='rounded-3xl' src='/src/images/blog/anteros-otp.jpg' alt='Anteros Client Portal' class='rounded-3xl' />",
+"The client portal, featuring an OTP (One-Time Password) authentication system linked to the Manager ERP email, allowed clients to independently review their purchases, order statuses, and quotes.\n",
+"<img class='rounded-3xl' src='/src/images/blog/anteros-portalclientes.jpg' alt='Anteros Client Portal' class='rounded-3xl' />",
+"The implementation of the MVP was a success. Thanks to its agile development and non-intrusive integration, Anteros was able to digitize its processes without interrupting daily operations. The new platform improved the sales team's mobility, increased efficiency in order note creation, and enhanced customer satisfaction by providing transparent access to their information.\n",
+"This success story demonstrates how an agile, solution-focused approach can modernize critical business processes without replacing existing systems. Fuix continues collaborating with Anteros in new stages to expand the platform's functionalities, incorporating more tools for automation and optimization in future phases.",
   ]
 ---
