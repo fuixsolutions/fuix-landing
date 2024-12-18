@@ -9,7 +9,7 @@ export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
   site: "https://www.fuix.cl",
   image: {
-    domains: ["images.unsplash.com"],
+    domains: ["images.unsplash.com", "gravatar.com"],
   },
   // i18n: {
   //   defaultLocale: "en",
