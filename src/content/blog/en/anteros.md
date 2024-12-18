@@ -2,7 +2,7 @@
 title: "Anteros: Digital Transformation Without Disruption."
 description: "How Anteros optimized its sales and inventory processes with a lightweight, non-intrusive solution."
 author: "Sabino"
-authorImage: "@/images/blog/post-1.avif"
+authorImage: "@images/mvp.png"
 authorEmail: "sabinovelasquez@gmail.com"
 authorImageAlt: "Sabino"
 pubDate: 2024-10-17

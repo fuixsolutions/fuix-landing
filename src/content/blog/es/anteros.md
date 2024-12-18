@@ -2,11 +2,11 @@
 title: "Anteros: Transformación digital sin disrupción."
 description: "Cómo Anteros optimizó su proceso de ventas e inventario con una solución liviana y no intrusiva."
 author: "Sabino"
-authorImage: "@/images/blog/post-1.avif"
+authorImage: "@images/mvp.png"
 authorEmail: "sabinovelasquez@gmail.com"
 authorImageAlt: "Sabino"
 pubDate: 2024-10-17
-cardImage: "@/images/mvp.png"
+cardImage: "@images/mvp.png"
 cardImageAlt: "Interfaz de la plataforma desarrollada para Anteros"
 readTime: 2
 tags: ["DevOps", "MVP", "ERP", "Automatización"]
