@@ -69,6 +69,7 @@ const blogCollection = defineCollection({
   author: z.string(),
   role: z.string().optional(),
   authorImage: image(),
+  authorEmail: z.string().optional(),
   authorImageAlt: z.string(),
   pubDate: z.date(),
   cardImage: image(),

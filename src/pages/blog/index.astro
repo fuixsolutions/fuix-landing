@@ -3,7 +3,7 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import CardBlog from "@components/ui/cards/CardBlog.astro";
 import CardBlogRecent from "@components/ui/cards/CardBlogRecent.astro";
-import CardInsight from "@components/ui/cards/CardInsight.astro";
+// import CardInsight from "@components/ui/cards/CardInsight.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
@@ -14,50 +14,50 @@ const englishBlogEntries = await getCollection("blog", ({ id }) => {
   return id.startsWith("en/");
 });
 
-const englishInsightsEntries = await getCollection("insights", ({ id }) => {
-  return id.startsWith("en/");
-});
+// const englishInsightsEntrin= await getCollection("insights", ({ id }) => {
+//   return id.startsWith("en/");
+// });
 
 const blogPosts: CollectionEntry<"blog">[] = englishBlogEntries.sort(
   (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 // Get all insights posts
-const insightPosts: CollectionEntry<"insights">[] = englishInsightsEntries;
+// const insightPosts: CollectionEntry<"insights">[] = englishInsightsEntries;
 
 // Separate the most recent post from others
 const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
 const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 
-// Define variables for page content
-const title: string = "Your Gateway to Construction Excellence";
+// Define variables for page content IN ENGLISH
+const title: string = "Fuix Blog";
 const subTitle: string =
-  "Explore the latest news, tips, and insights from ScrewFast to enhance your construction projects. From product spotlights to project management strategies, our blog is your go-to resource for all things hardware and construction.";
-const secondTitle: string = "Insights";
-const secondSubTitle: string =
-  "Stay up-to-date with the latest trends and developments in the construction industry with insights from ScrewFast's team of industry experts. ";
+  "Explore the latest news, tips, and techniques from our development team.";
+// const secondTitle: string = "Perspectives";
+// const secondSubTitle: string = "";
 
 const pageTitle: string = `Blog | ${SITE.title}`;
 ---
 
 <MainLayout
+  lang="es"
   title={pageTitle}
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/blog",
-    url: "https://screwfast.uk/blog",
-    name: "Blog | ScrewFast",
+    "@id": "https://fuix.cl/blog",
+    url: "https://fuix.cl/blog",
+    name: "Blog | Fuix",
     description:
-      "Stay up-to-date with the latest trends and developments in the construction industry with insights from ScrewFast's team of industry experts.",
+      "Explore the latest news, tips, and techniques from our development team.",
     isPartOf: {
       "@type": "WebSite",
-      url: "https://screwfast.uk",
-      name: "ScrewFast",
+      url: "https://fuix.cl/",
+      name: "Fuix",
       description:
-        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+        "Fuix is a development venture made up of professionals with over 20 years of experience, specializing in creating digital solutions for businesses and entrepreneurs.",
     },
-    inLanguage: "en-US",
+    inLanguage: "en",
   }}
 >
   <section
@@ -82,19 +82,19 @@ const pageTitle: string = `Blog | ${SITE.title}`;
   <section
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
-    <!--Blog posts grid-->
     <div class="grid gap-6 lg:grid-cols-2">
+      <CardBlog blogEntry={mostRecentPost} />
       {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} />)}
     </div>
   </section>
   <!--Most recent blog post-->
-  <section
+  <!-- <section
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
     <CardBlogRecent blogEntry={mostRecentPost} />
-  </section>
+  </section> -->
   <!--Insights section-->
-  <section
+  <!-- <section
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
     <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
@@ -114,5 +114,5 @@ const pageTitle: string = `Blog | ${SITE.title}`;
         ))
       }
     </div>
-  </section>
+  </section> -->
 </MainLayout>

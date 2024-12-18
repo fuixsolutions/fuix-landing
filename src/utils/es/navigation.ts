@@ -2,7 +2,7 @@
 const navBarLinks = [
   { name: "Home", url: "/es/" },
   { name: "Servicios", url: "/es/services" },
-  // { name: "Blog", url: "/es/blog" },
+  { name: "Blog", url: "/es/blog" },
   { name: "Contacto", url: "/es/contact" },
 ];
 // An array of links for footer
@@ -20,7 +20,7 @@ const footerLinks = [
       { name: "Low Code / No Code", url: "/es/services/low-code-no-code" },
       { name: "DevOps", url: "/es/services/devops" },
       { name: "Productos Mínimos Viables", url: "/es/services/mvp" },
-      // { name: "Blog", url: "/blog" },
+      { name: "Blog", url: "/blog" },
     ],
   },
 ];

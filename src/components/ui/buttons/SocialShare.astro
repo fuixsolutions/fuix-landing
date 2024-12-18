@@ -1,9 +1,10 @@
 ---
 import Icon from "@components/ui/icons/Icon.astro";
 // Destructure the properties from Astro.props
+const locale = Astro.currentLocale;
 const {
   pageTitle,
-  title = Astro.currentLocale === "es" ? "Partager" : "Share",
+  title = Astro.currentLocale === "es" ? "Compartir" : "Share",
 } = Astro.props;
 
 // Define TypeScript interface for the properties
@@ -62,7 +63,7 @@ const socialPlatforms: SocialPlatform[] = [
             href={platform.url}
           >
             <Icon name={platform.svg} />
-            Share on {platform.name}
+            {locale == "es" ? "Compartir en" : "Share on"} {platform.name}
           </a>
         ))
       }

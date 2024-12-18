@@ -80,7 +80,7 @@ const htmlContent = convertMarkdownToHtml(markdownContent);
                   <li
                     class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-neutral-300 last:pe-0 last-of-type:before:hidden dark:text-neutral-400 dark:before:bg-neutral-600"
                   >
-                    {post.data.readTime} min read
+                    lectura de {post.data.readTime} min
                   </li>
                 </ul>
               </div>
@@ -136,20 +136,25 @@ const htmlContent = convertMarkdownToHtml(markdownContent);
         </div>
       </div>
     </div>
-    <PostFeedback
+    <!-- <PostFeedback
       title="Cet article était-il utile?"
       firstChoice="Oui"
       secondChoice="Non"
+    /> -->
+    <PostFeedback
+      title="¿Este artículo fue útil?"
+      firstChoice="Sí"
+      secondChoice="No"
     />
   </section>
 
   <!--Related articles section-->
-  <section class="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+  <!-- <section class="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
     <div class="mb-10 max-w-2xl">
       <h2
         class="text-balance text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
       >
-        Articles connexes
+        Artículos relacionados
       </h2>
     </div>
 
@@ -160,5 +165,5 @@ const htmlContent = convertMarkdownToHtml(markdownContent);
         ))
       }
     </div>
-  </section>
+  </section> -->
 </MainLayout>
