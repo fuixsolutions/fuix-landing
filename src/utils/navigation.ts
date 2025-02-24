@@ -1,8 +1,8 @@
 // An array of links for the navigation bar
 const navBarLinks = [
   { name: "Home", url: "/" },
-  { name: "Services", url: "/services" },
-  { name: "Blog", url: "/blog" },
+  { name: "Services", url: "/es/services" },
+  { name: "Blog", url: "/es/blog" },
   { name: "Contact", url: "/contact" },
 ];
 // An array of links for the footer
@@ -10,17 +10,17 @@ const footerLinks = [
   {
     section: "Company",
     links: [
-      { name: "Services", url: "/services" },
+      { name: "Services", url: "/es/services" },
       { name: "Contact", url: "/contact" },
     ],
   },
   {
     section: "Services",
     links: [
-      { name: "Low Code / No Code", url: "/services/low-code-no-code" },
-      { name: "DevOps", url: "/services/devops" },
-      { name: "Minimum Viable Products", url: "/services/mvp" },
-      { name: "Blog", url: "/blog" },
+      { name: "Low Code / No Code", url: "/es/services/low-code-no-code" },
+      { name: "DevOps", url: "/es/services/devops" },
+      { name: "Minimum Viable Products", url: "/es/services/mvp" },
+      { name: "Blog", url: "/es/blog" },
     ],
   },
 ];

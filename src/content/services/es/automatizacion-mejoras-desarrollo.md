@@ -36,8 +36,6 @@ descriptionList:
     subTitle: "Monitoreo y Logging Avanzado (Prometheus, ELK, Datadog)"
   - title: "Infraestructura como Código (Terraform, Ansible, AWS CloudFormation)"
     subTitle: "Infraestructura como Código (Terraform, Ansible, AWS CloudFormation)"
-  - title: "Seguridad en el Desarrollo (SAST, DAST, DevSecOps best practices)"
-    subTitle: "Seguridad en el Desarrollo (SAST, DAST, DevSecOps best practices)"
 specificationsLeft:
   - title: "Mayor velocidad"
     subTitle: "Automatizamos procesos para reducir tiempos de despliegue."

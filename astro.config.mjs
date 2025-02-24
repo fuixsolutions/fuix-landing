@@ -28,6 +28,7 @@ export default defineConfig({
       i18n: {
         defaultLocale: "root", // All urls that don't contain `fr` after `https://fuix.cl/` will be treated as default locale, i.e. `en`
         locales: {
+          en:'en',
           es: "es",
         },
       },
@@ -45,7 +46,7 @@ export default defineConfig({
           label: "Español",
           lang: "es",
         },
-        // es: { label: "English", lang: "en" },
+        es: { label: "English", lang: "en" },
       },
       // https://starlight.astro.build/guides/sidebar/
       // sidebar: [

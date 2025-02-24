@@ -5,7 +5,7 @@ subtitle: "Nuestro Proceso de Desarrollo:"
 main:
   id: 2
   content: |
-    Desarrollo a medida para móviles, web y software empresarial.
+    
   imgCard: "@/images/icon.png"
   imgMain: "@/images/transformacion-digital.png"
   imgAlt: "Mockup boxes of assorted screw set"

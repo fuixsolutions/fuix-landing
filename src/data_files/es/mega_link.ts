@@ -1,18 +1,29 @@
 // Define data structures for services and success stories
 export const servicesDataEs = [
   {
+    title: "Aceleración Digital Empresarial",
+    description: "Automatizamos el desarrollo de software y la gestión de infraestructuras.",
+    icon: "sparks",
+    url: "aceleracion-digital-empresarial",
+  },
+  {
+    title: "Automatización y Mejoras en el Desarrollo",
+    description: "Optimiza tu flujo de trabajo con DevOps y mejores prácticas de desarrollo.",
+    icon: "hammer",
+    url: "automatizacion-mejoras-desarrollo",
+  },
+  {
+    title: "Desarrollo de Aplicaciones",
+    description: "Desarrollo a medida para móviles, web y software empresarial.",
+    icon: "device",
+    url: "desarrollo-aplicaciones"
+  },
+  {
     title: "Low Code / No Code",
     description:
       "Construímos aplicaciones de software sin necesidad de escribir código",
     icon: "lowcode",
     url: "low-code-no-code",
-  },
-  {
-    title: "DevOps",
-    description:
-      "Automatizamos el desarrollo de software y la gestión de infraestructura",
-    icon: "nas",
-    url: "devops",
   },
   {
     title: "Productos Mínimos Viables",

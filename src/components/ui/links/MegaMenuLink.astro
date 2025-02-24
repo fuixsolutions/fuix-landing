@@ -15,7 +15,7 @@ dataInput = servicesDataEs;
 >
   <button type="button" class="flex items-center">
     <a
-      href="/services/"
+      href="es/services/"
       class="rounded-lg text-base font-medium text-neutral-600 outline-none ring-zinc-500 hover:text-neutral-500 focus-visible:ring dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-neutral-500 dark:focus:outline-none md:py-3 md:text-sm 2xl:text-base"
       >{productLocale == "en" ? "Services" : "Servicios"}</a
     >
@@ -29,10 +29,10 @@ dataInput = servicesDataEs;
       <div class="mx-1 flex flex-col md:mx-0">
         {
           dataInput &&
-            dataInput.slice(0, 3).map((data) => (
+            dataInput.slice(0, 5).map((data) => (
               <a
                 class="group flex gap-x-5 rounded-lg p-4 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-500/10"
-                href={`/services/${data.url}/`}
+                href={`/es/services/${data.url}/`}
               >
                 <Icon name={data.icon} class="mt-1 size-5 flex-shrink-0" />
                 <div class="grow">
