@@ -1,8 +1,12 @@
 ---
 // Importing necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import CardSmall from "@components/ui/cards/CardSmall.astro";
+import CardWide from "@components/ui/cards/CardWide.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
+import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
 import ContactSection from "@components/sections/misc/ContactSection.astro";
 import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 import lowcode from "@images/lowcode.png";
@@ -13,7 +17,7 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-// Fetching all the product-related content and sorting it by main.id
+// Fetching all the product related content and sorting it by main.id
 const product: CollectionEntry<"services">[] = (
   await getCollection("services", ({ id }) => {
     return id.startsWith("en/");
@@ -24,14 +28,13 @@ const product: CollectionEntry<"services">[] = (
 );
 
 // Define variables for page content
-const title: string = "Services";
-const subTitle: string =
-  "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts. Each of our products is crafted with precision and built to last, ensuring you have the right tool for every job.";
+const title: string = "Servicios";
+const subTitle: string = "";
 
 // Testimonial data that will be rendered in the component
 const testimonials = [];
 
-const pageTitle: string = `Products | ${SITE.title}`;
+const pageTitle: string = `Services | ${SITE.title}`;
 ---
 
 <MainLayout
@@ -39,48 +42,77 @@ const pageTitle: string = `Products | ${SITE.title}`;
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/products",
-    url: "https://screwfast.uk/products",
-    name: "Hardware Tools | ScrewFast",
+    "@id": "https://fui.cl/services",
+    url: "https://fui.cl/services",
+    name: "Soluciones Digitales | Fuix",
     description:
-      "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts.",
+      "Soluciones digitales innovadoras, diseñadas para maximizar el impacto y adaptarse a las necesidades de tu negocio.",
     isPartOf: {
       "@type": "WebSite",
-      url: "https://screwfast.uk",
-      name: "ScrewFast",
+      url: "https://fuix.cl",
+      name: "Fuix",
       description:
-        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+        "Fuix es un emprendimiento de desarrollo de software, enfocado en la creación de soluciones digitales.",
     },
-    inLanguage: "en-US",
+    inLanguage: "es-ES",
   }}
 >
   <div
     class="mx-auto max-w-[85rem] px-4 pb-10 sm:px-6 lg:px-8 lg:pb-14 2xl:max-w-full"
   >
+    <!-- <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
+      <div class="flex items-center gap-12">
+        <h1
+          class="font-header text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+        >
+          {title}
+        </h1>
+        {
+          subTitle && (
+            <p class="hidden max-w-screen-sm text-pretty text-neutral-600 dark:text-neutral-400 md:block">
+              {subTitle}
+            </p>
+          )
+        }
+      </div>
+      <PrimaryCTA title="Customer Stories" url="#testimonials" noArrow={true} />
+    </div> -->
+    <!--Displaying products in alternating styles. Alternative product gets different card styling.-->
+    <!--Maps through all product entries and displays them with either CardSmall or CardWide based on their position.-->
+    <!-- <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+      {
+        product.map((product, index) => {
+          const position = index % 4;
+          if (position === 0 || position === 3) {
+            return <CardSmall product={product} />;
+          } else {
+            return <CardWide product={product} />;
+          }
+        })
+      }
+    </section> -->
   </div>
-
+  <!--Features statistics section-->
   <FeaturesStatsAlt
-    title="Our Services"
-    subTitle="We offer innovative digital solutions, designed to maximize impact and adapt to your business needs."
+    title="Nuestros servicios"
+    subTitle="Ofrecemos soluciones digitales innovadoras, diseñadas para maximizar el impacto y adaptarse a las necesidades de tu negocio."
     benefits={[
-      "Over 20 years of experience in development and technology, applied to deliver exceptional results.",
-      "Use of artificial intelligence and cutting-edge technologies to optimize processes and enhance your projects.",
-      "Empathetic and personalized approach to understand and solve your business’s specific challenges.",
+      "Más de 20 años de experiencia en desarrollo y tecnología, aplicados para entregar resultados excepcionales.",
+      "Uso de inteligencia artificial y tecnologías de vanguardia para optimizar procesos y potenciar tus proyectos.",
+      "Enfoque empático y personalizado para comprender y resolver los desafíos específicos de tu negocio.",
     ]}
   />
-
   <ClientsSection
-    title="Our Trusted Clients"
-    subTitle="Both large corporations and small businesses have trusted our expertise."
+    title="Confían en nosotros"
+    subTitle=`Grandes empresas y pequeños emprendimientos han confiado en nuestra expertise.`
   />
-
   <FeaturesNavs
-    title="We can guide you through creating a <span class='text-yellow-500 dark:text-yellow-400'>digital solution</span> that meets your business expectations."
+    title=`Podemos guiarte a través del proceso de creación de una <span class="text-yellow-500 dark:text-yellow-400">solución digital</span> que cumpla con las expectativas de tu negocio.`
     tabs={[
       {
         heading: "Low Code / No Code",
         content:
-          "Build and integrate applications with minimal coding, allowing your team to create solutions faster and more efficiently.",
+          "Construye e integra aplicaciones con un mínimo de codificación, permitiendo a tu equipo crear soluciones de forma más rápida y eficiente.",
         svg: "lowcode",
         src: lowcode,
         alt: "Low Code / No Code",
@@ -90,7 +122,7 @@ const pageTitle: string = `Products | ${SITE.title}`;
       {
         heading: "DevOps",
         content:
-          "Leverage automation and collaboration to streamline your development process and deliver high-quality software.",
+          "Aprovecha el poder de la automatización y la colaboración para optimizar tu proceso de desarrollo y entregar software de alta calidad.",
         svg: "nas",
         src: devops,
         alt: "DevOps",
@@ -98,16 +130,20 @@ const pageTitle: string = `Products | ${SITE.title}`;
         link: "/services/devops",
       },
       {
-        heading: "Minimum Viable Products (MVP)",
+        heading: "Productos Mínimos Viables",
         content:
-          "Launch your product quickly and cost-effectively, validating focused hypotheses and continuously improving based on user feedback.",
+          "Lanza tu producto de forma rápida y rentable, validando hipótesis acotadas y mejorando continuamente en base a la retroalimentación de tus usuarios.",
         svg: "rocket",
         src: mvp,
-        alt: "Minimum Viable Products",
+        alt: "Productos Mínimos Viables",
         link: "/services/mvp",
       },
     ]}
   />
-
   <ContactSection />
+  <!--Testimonials section-->
+  <!-- <TestimonialsSectionAlt
+    title="What Our Customers Say"
+    testimonials={testimonials}
+  /> -->
 </MainLayout>

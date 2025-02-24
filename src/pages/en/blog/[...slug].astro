@@ -15,12 +15,12 @@ import { SITE } from "@data/constants";
 // Update getStaticPaths for French posts
 export async function getStaticPaths() {
   const blogPosts = await getCollection("blog", ({ id }) =>
-    id.startsWith("es/")
+    id.startsWith("en/")
   );
   return blogPosts.map((post) => {
-    const slugWithoutLang = post.slug.replace(/^es\//, ""); // Remove the "fr/" prefix
+    const slugWithoutLang = post.slug.replace(/^en\//, ""); // Remove the "fr/" prefix
     return {
-      params: { lang: "es", slug: slugWithoutLang },
+      params: { lang: "en", slug: slugWithoutLang },
       props: { post },
     };
   });
@@ -31,7 +31,7 @@ const { post } = Astro.props;
 // Fetch related posts
 const blogPosts: CollectionEntry<"blog">[] = await getCollection(
   "blog",
-  ({ id }) => id.startsWith("es/")
+  ({ id }) => id.startsWith("en/")
 );
 const relatedPosts: CollectionEntry<"blog">[] = blogPosts.filter(
   (blogEntry) => blogEntry.slug !== post.slug
@@ -80,7 +80,7 @@ const htmlContent = convertMarkdownToHtml(markdownContent);
                   <li
                     class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-neutral-300 last:pe-0 last-of-type:before:hidden dark:text-neutral-400 dark:before:bg-neutral-600"
                   >
-                    lectura de {post.data.readTime} min
+                    {post.data.readTime} min read
                   </li>
                 </ul>
               </div>
@@ -139,11 +139,11 @@ const htmlContent = convertMarkdownToHtml(markdownContent);
     <!-- <PostFeedback
       title="Cet article était-il utile?"
       firstChoice="Oui"
-      secondChoice="Non"
+      secondChoice="Non" in english:
     /> -->
     <PostFeedback
-      title="¿Este artículo fue útil?"
-      firstChoice="Sí"
+      title="Was this article helpful?"
+      firstChoice="Yes"
       secondChoice="No"
     />
   </section>
@@ -154,14 +154,14 @@ const htmlContent = convertMarkdownToHtml(markdownContent);
       <h2
         class="text-balance text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
       >
-        Artículos relacionados
+        Related articles
       </h2>
     </div>
 
     <div class="grid grid-cols-2 gap-6">
       {
         relatedPosts.map((entry) => (
-          <CardRelated blogEntry={entry} recentBlogLocale="es" />
+          <CardRelated blogEntry={entry} recentBlogLocale="en" />
         ))
       }
     </div>

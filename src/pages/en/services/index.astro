@@ -1,0 +1,113 @@
+---
+// Importing necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
+import ContactSection from "@components/sections/misc/ContactSection.astro";
+import ClientsSection from "@components/sections/landing/ClientsSection.astro";
+import lowcode from "@images/lowcode.png";
+import mvp from "@images/mvp.png";
+import devops from "@images/devops-monitor.png";
+// Importing necessary functions from Astro
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
+
+// Fetching all the product-related content and sorting it by main.id
+const product: CollectionEntry<"services">[] = (
+  await getCollection("services", ({ id }) => {
+    return id.startsWith("es/");
+  })
+).sort(
+  (a: CollectionEntry<"services">, b: CollectionEntry<"services">) =>
+    a.data.main.id - b.data.main.id
+);
+
+// Define variables for page content
+const title: string = "Services";
+const subTitle: string =
+  "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts. Each of our products is crafted with precision and built to last, ensuring you have the right tool for every job.";
+
+// Testimonial data that will be rendered in the component
+const testimonials = [];
+
+const pageTitle: string = `Products | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://screwfast.uk/products",
+    url: "https://screwfast.uk/products",
+    name: "Hardware Tools | ScrewFast",
+    description:
+      "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts.",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://screwfast.uk",
+      name: "ScrewFast",
+      description:
+        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+    },
+    inLanguage: "en-US",
+  }}
+>
+  <div
+    class="mx-auto max-w-[85rem] px-4 pb-10 sm:px-6 lg:px-8 lg:pb-14 2xl:max-w-full"
+  >
+  </div>
+
+  <FeaturesStatsAlt
+    title="Our Services"
+    subTitle="We offer innovative digital solutions, designed to maximize impact and adapt to your business needs."
+    benefits={[
+      "Over 20 years of experience in development and technology, applied to deliver exceptional results.",
+      "Use of artificial intelligence and cutting-edge technologies to optimize processes and enhance your projects.",
+      "Empathetic and personalized approach to understand and solve your business’s specific challenges.",
+    ]}
+  />
+
+  <ClientsSection
+    title="Our Trusted Clients"
+    subTitle="Both large corporations and small businesses have trusted our expertise."
+  />
+
+  <FeaturesNavs
+    title="We can guide you through creating a <span class='text-yellow-500 dark:text-yellow-400'>digital solution</span> that meets your business expectations."
+    tabs={[
+      {
+        heading: "Low Code / No Code",
+        content:
+          "Build and integrate applications with minimal coding, allowing your team to create solutions faster and more efficiently.",
+        svg: "lowcode",
+        src: lowcode,
+        alt: "Low Code / No Code",
+        first: true,
+        link: "/services/low-code-no-code",
+      },
+      {
+        heading: "DevOps",
+        content:
+          "Leverage automation and collaboration to streamline your development process and deliver high-quality software.",
+        svg: "nas",
+        src: devops,
+        alt: "DevOps",
+        second: true,
+        link: "/services/devops",
+      },
+      {
+        heading: "Minimum Viable Products (MVP)",
+        content:
+          "Launch your product quickly and cost-effectively, validating focused hypotheses and continuously improving based on user feedback.",
+        svg: "rocket",
+        src: mvp,
+        alt: "Minimum Viable Products",
+        link: "/services/mvp",
+      },
+    ]}
+  />
+
+  <ContactSection />
+</MainLayout>

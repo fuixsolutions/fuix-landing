@@ -8,6 +8,14 @@ const productsCollection = defineCollection({
     schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
+    subtitle: z.string().optional(),
+    features: z.array(
+      z.object({
+        id: z.number(),
+        heading: z.string(),
+        content: z.string()
+      })
+    ).optional(),
     main: z.object({
       id: z.number(),
       content: z.string(),

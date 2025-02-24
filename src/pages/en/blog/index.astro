@@ -11,10 +11,10 @@ import { SITE } from "@data/constants";
 // Get all blogs post in English and sort them based on publish date
 
 const englishBlogEntries = await getCollection("blog", ({ id }) => {
-  return id.startsWith("es/");
+  return id.startsWith("en/");
 });
 
-// const englishInsightsEntries = await getCollection("insights", ({ id }) => {
+// const englishInsightsEntrin= await getCollection("insights", ({ id }) => {
 //   return id.startsWith("en/");
 // });
 
@@ -29,10 +29,10 @@ const blogPosts: CollectionEntry<"blog">[] = englishBlogEntries.sort(
 const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
 const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 
-// Define variables for page content
-const title: string = "Blog de Fuix";
+// Define variables for page content IN ENGLISH
+const title: string = "Fuix Blog";
 const subTitle: string =
-  "Explora las últimas novedades, consejos y técnicas de nuestro equipo de desarrollo.";
+  "Explore the latest news, tips, and techniques from our development team.";
 // const secondTitle: string = "Perspectives";
 // const secondSubTitle: string = "";
 
@@ -45,19 +45,19 @@ const pageTitle: string = `Blog | ${SITE.title}`;
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://fuix.cl/es/blog",
-    url: "https://fuix.cl/es/blog",
+    "@id": "https://fuix.cl/blog",
+    url: "https://fuix.cl/blog",
     name: "Blog | Fuix",
     description:
-      "Explora las últimas novedades, consejos y técnicas de nuestro equipo de desarrollo.",
+      "Explore the latest news, tips, and techniques from our development team.",
     isPartOf: {
       "@type": "WebSite",
-      url: "https://fuix.cl/es",
+      url: "https://fuix.cl/",
       name: "Fuix",
       description:
-        "Fuix es un emprendimiento de desarrollo conformado de profesionales con más de 20 años de experiencia,  especializada en la creación de soluciones digitales para empresas y emprendedores.",
+        "Fuix is a development venture made up of professionals with over 20 years of experience, specializing in creating digital solutions for businesses and entrepreneurs.",
     },
-    inLanguage: "es",
+    inLanguage: "en",
   }}
 >
   <section

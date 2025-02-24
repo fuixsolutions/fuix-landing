@@ -20,12 +20,12 @@ declare global {
 
 export async function getStaticPaths() {
   const productEntries = await getCollection("services", ({ id }) =>
-    id.startsWith("en/")
+    id.startsWith("es/")
   );
   return productEntries.map((product) => {
-    const slugWithoutLang = product.slug.replace(/^en\//, ""); // Remove the "en/" prefix
+    const slugWithoutLang = product.slug.replace(/^es\//, ""); // Remove the "fr/" prefix
     return {
-      params: { slug: slugWithoutLang },
+      params: { lang: "es", slug: slugWithoutLang },
       props: { product },
     };
   });
@@ -130,9 +130,31 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
     </div>
   </section>
   <ClientsSection
-    title="Trusted by Our Clients"
-    subTitle=`Both large enterprises and small businesses rely on our ${product.data.title} solutions.`
+    title="Confían en nosotros"
+    subTitle=`Grandes empresas y pequeños emprendimientos han confiado en nuestra expertise en ${product.data.title}.`
   />
+  <!-- {
+    product.data.features && (
+      product.data.features.map(
+        (feature: { heading: string; content: string }) => (
+            <div class="lg:grid lg:grid-cols-12 lg:items-center lg:gap-16">
+              <div class="lg:col-span-5">
+                <h2
+                  class="text-balance font-header text-2xl font-bold text-neutral-800 dark:text-neutral-200 lg:text-4xl"
+                >
+                  {feature.heading}
+                </h2>
+              </div>
+              <div class="mt-5 sm:mt-10 lg:col-span-7 lg:mt-0">
+                <p class="text-pretty text-neutral-600 dark:text-neutral-400">
+                  {feature.content}
+                </p>
+              </div>
+            </div>
+        )
+      )
+    )
+  } -->
   <section
     class="mx-auto flex max-w-[85rem] flex-col rounded-3xl bg-neutral-100 px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
@@ -143,10 +165,14 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
             <h2
               class="text-balance font-header text-3xl font-bold text-gray-800 lg:text-4xl"
             >
-              Our <span class="text-yellow-500 dark:text-yellow-400"
+              <span
+                class="text-yellow-500 dark:text-yellow-400"
                 >{product.data.title}</span
-              > solutions are designed to meet your needs:
+              >
             </h2>
+            <p class="text-pretty text-gray-600 dark:text-gray-400">
+              {product.data.subtitle}
+            </p>
           </div>
           {
             product.data.specificationsLeft && (

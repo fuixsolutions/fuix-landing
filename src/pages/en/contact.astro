@@ -7,7 +7,7 @@ import { SITE } from "@data/constants";
 const pageTitle: string = `Contact | ${SITE.title}`;
 ---
 
-<!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
+<!-- Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes -->
 <MainLayout
   title={pageTitle}
   structuredData={{
@@ -15,17 +15,17 @@ const pageTitle: string = `Contact | ${SITE.title}`;
     "@type": "WebPage",
     "@id": "https://fuix.cl/contact",
     url: "https://fuix.cl/contact",
-    name: "Contáctanos",
+    name: "Contact Us",
     description:
-      "Contáctanos para cualquier consulta, comentario o soporte. ¡Estamos aquí para ayudarte!",
+      "Contact us for any questions, feedback, or support. We're here to help!",
     isPartOf: {
       "@type": "WebSite",
       url: "https://fuix.cl",
       name: "Fuix",
       description:
-        "Fuix es un emprendimiento de desarrollo de software, enfocado en la creación de soluciones digitales.",
+        "Fuix is a software development startup focused on creating digital solutions.",
     },
-    inLanguage: "es-ES",
+    inLanguage: "en-US",
   }}
 >
   <ContactSection />

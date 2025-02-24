@@ -15,12 +15,12 @@ import { SITE } from "@data/constants";
 // Update getStaticPaths for French posts
 export async function getStaticPaths() {
   const blogPosts = await getCollection("blog", ({ id }) =>
-    id.startsWith("en/")
+    id.startsWith("es/")
   );
   return blogPosts.map((post) => {
-    const slugWithoutLang = post.slug.replace(/^en\//, ""); // Remove the "fr/" prefix
+    const slugWithoutLang = post.slug.replace(/^es\//, ""); // Remove the "fr/" prefix
     return {
-      params: { lang: "en", slug: slugWithoutLang },
+      params: { lang: "es", slug: slugWithoutLang },
       props: { post },
     };
   });
@@ -31,7 +31,7 @@ const { post } = Astro.props;
 // Fetch related posts
 const blogPosts: CollectionEntry<"blog">[] = await getCollection(
   "blog",
-  ({ id }) => id.startsWith("en/")
+  ({ id }) => id.startsWith("es/")
 );
 const relatedPosts: CollectionEntry<"blog">[] = blogPosts.filter(
   (blogEntry) => blogEntry.slug !== post.slug
@@ -80,7 +80,7 @@ const htmlContent = convertMarkdownToHtml(markdownContent);
                   <li
                     class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-neutral-300 last:pe-0 last-of-type:before:hidden dark:text-neutral-400 dark:before:bg-neutral-600"
                   >
-                    {post.data.readTime} min read
+                    lectura de {post.data.readTime} min
                   </li>
                 </ul>
               </div>
@@ -116,7 +116,7 @@ const htmlContent = convertMarkdownToHtml(markdownContent);
           class="flex flex-wrap gap-x-2 gap-y-1 sm:flex-nowrap sm:items-center sm:gap-y-0"
         >
           {
-            post.data.tags?.map((tag: string, index) => (
+            post.data.tags?.map((tag: string) => (
               <span class="inline-flex items-center gap-x-1.5 rounded-lg bg-neutral-400/30 px-3 py-1.5 text-xs font-medium text-neutral-700 outline-none focus:outline-none focus-visible:outline-none focus-visible:ring dark:bg-neutral-700/60 dark:text-neutral-300">
                 {capitalize(tag)}
               </span>
@@ -139,11 +139,11 @@ const htmlContent = convertMarkdownToHtml(markdownContent);
     <!-- <PostFeedback
       title="Cet article était-il utile?"
       firstChoice="Oui"
-      secondChoice="Non" in english:
+      secondChoice="Non"
     /> -->
     <PostFeedback
-      title="Was this article helpful?"
-      firstChoice="Yes"
+      title="¿Este artículo fue útil?"
+      firstChoice="Sí"
       secondChoice="No"
     />
   </section>
@@ -154,14 +154,14 @@ const htmlContent = convertMarkdownToHtml(markdownContent);
       <h2
         class="text-balance text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
       >
-        Related articles
+        Artículos relacionados
       </h2>
     </div>
 
     <div class="grid grid-cols-2 gap-6">
       {
         relatedPosts.map((entry) => (
-          <CardRelated blogEntry={entry} recentBlogLocale="en" />
+          <CardRelated blogEntry={entry} recentBlogLocale="es" />
         ))
       }
     </div>

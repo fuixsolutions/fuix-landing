@@ -1,0 +1,96 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import HeroSection from "@components/sections/landing/HeroSection.astro";
+import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
+import ClientsSection from "@components/sections/landing/ClientsSection.astro";
+import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
+import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
+import PricingSection from "@components/sections/pricing/PricingSection.astro";
+import FAQ from "@components/sections/misc/FAQ.astro";
+import heroImage from "@images/hero-image.png";
+import faqs from "@data/faqs.json";
+import features from "@data/features.json";
+import pricing from "@data/pricing.json";
+import featureImage from "@images/features-image.png";
+import lowcode from "@images/lowcode.png";
+import mvp from "@images/mvp.png";
+import tools from "@images/automated-tools.avif";
+import devops from "@images/devops-monitor.png";
+import dashboard from "@images/dashboard-image.avif";
+
+const avatarSrcs: Array<string> = []; // Empty array for avatars
+---
+
+<MainLayout>
+  <HeroSection
+    title=`Accelerate your growth with <span
+        class="text-yellow-500 dark:text-yellow-400">Smart Digital Solutions</span>`
+    subTitle=`We integrate and optimize digital tools so you can focus on what truly matters: <strong>your business.</strong>`
+    primaryBtn="Our Services"
+    primaryBtnURL="/services"
+    secondaryBtn="Contact Us"
+    secondaryBtnURL="/contact"
+    withReview={false}
+    avatars={avatarSrcs}
+    rating=`<span class="font-bold">4.8</span> / 5`
+    starCount={4}
+    reviews=`<span class="font-bold">200+</span> Implemented Solutions`
+    src={heroImage}
+    alt="Cloud environment with digital devices"
+  />
+
+  <ClientsSection
+    title="Trusted by Our Clients"
+    subTitle="Both large enterprises and small businesses rely on our expertise."
+  />
+
+  <FeaturesGeneral
+    title="Corporate Technology at Your Fingertips"
+    subTitle="We build digital solutions by integrating agile methodologies and cutting-edge technology."
+    src={mvp}
+    alt="Fuix Low Code"
+    features={features}
+  />
+
+  <FeaturesNavs
+    title=`We can guide you through the process of creating a <span class="text-yellow-500 dark:text-yellow-400">digital solution</span> that meets your business expectations.`
+    tabs={[
+      {
+        heading: "Low Code / No Code",
+        content:
+          "Build and integrate applications with minimal coding, allowing your team to create solutions faster and more efficiently.",
+        svg: "lowcode",
+        src: lowcode,
+        alt: "Low Code / No Code",
+        first: true,
+        link: "/services/low-code-no-code",
+      },
+      {
+        heading: "DevOps",
+        content:
+          "Harness the power of automation and collaboration to optimize your development process and deliver high-quality software.",
+        svg: "nas",
+        src: devops,
+        alt: "DevOps",
+        second: true,
+        link: "/services/devops",
+      },
+      {
+        heading: "Minimum Viable Products",
+        content:
+          "Launch your product quickly and cost-effectively, validating focused hypotheses and continuously improving based on user feedback.",
+        svg: "rocket",
+        src: mvp,
+        alt: "Minimum Viable Products",
+        link: "/services/mvp",
+      },
+    ]}
+  />
+
+  <HeroSectionAlt
+    title="Let's Build Together"
+    subTitle="Let's talk about how we can help you achieve your goals."
+    url="/contact"
+  />
+</MainLayout>

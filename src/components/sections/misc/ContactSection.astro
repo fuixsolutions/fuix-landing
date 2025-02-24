@@ -163,7 +163,7 @@ const formSubTitle: string =
             formDiv.remove();
           }
           const lang = localUrl.split("/")[3];
-          const redirectTo = lang === "es" ? "/es/thank-you" : "/thank-you";
+          const redirectTo = "/thank-you";
           window.location.href = redirectTo;
         } else {
           if (errorDiv) {

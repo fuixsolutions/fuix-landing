@@ -11,10 +11,10 @@ import { SITE } from "@data/constants";
 // Get all blogs post in English and sort them based on publish date
 
 const englishBlogEntries = await getCollection("blog", ({ id }) => {
-  return id.startsWith("en/");
+  return id.startsWith("es/");
 });
 
-// const englishInsightsEntrin= await getCollection("insights", ({ id }) => {
+// const englishInsightsEntries = await getCollection("insights", ({ id }) => {
 //   return id.startsWith("en/");
 // });
 
@@ -29,10 +29,10 @@ const blogPosts: CollectionEntry<"blog">[] = englishBlogEntries.sort(
 const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
 const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 
-// Define variables for page content IN ENGLISH
-const title: string = "Fuix Blog";
+// Define variables for page content
+const title: string = "Blog de Fuix";
 const subTitle: string =
-  "Explore the latest news, tips, and techniques from our development team.";
+  "Explora las últimas novedades, consejos y técnicas de nuestro equipo de desarrollo.";
 // const secondTitle: string = "Perspectives";
 // const secondSubTitle: string = "";
 
@@ -49,15 +49,15 @@ const pageTitle: string = `Blog | ${SITE.title}`;
     url: "https://fuix.cl/blog",
     name: "Blog | Fuix",
     description:
-      "Explore the latest news, tips, and techniques from our development team.",
+      "Explora las últimas novedades, consejos y técnicas de nuestro equipo de desarrollo.",
     isPartOf: {
       "@type": "WebSite",
-      url: "https://fuix.cl/",
+      url: "https://fuix.cl",
       name: "Fuix",
       description:
-        "Fuix is a development venture made up of professionals with over 20 years of experience, specializing in creating digital solutions for businesses and entrepreneurs.",
+        "Fuix es un emprendimiento de desarrollo conformado de profesionales con más de 20 años de experiencia,  especializada en la creación de soluciones digitales para empresas y emprendedores.",
     },
-    inLanguage: "en",
+    inLanguage: "es",
   }}
 >
   <section

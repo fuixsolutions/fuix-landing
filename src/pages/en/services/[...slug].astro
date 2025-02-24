@@ -23,9 +23,9 @@ export async function getStaticPaths() {
     id.startsWith("es/")
   );
   return productEntries.map((product) => {
-    const slugWithoutLang = product.slug.replace(/^es\//, ""); // Remove the "fr/" prefix
+    const slugWithoutLang = product.slug.replace(/^es\//, ""); // Remove the "en/" prefix
     return {
-      params: { lang: "es", slug: slugWithoutLang },
+      params: { slug: slugWithoutLang },
       props: { product },
     };
   });
@@ -130,8 +130,8 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
     </div>
   </section>
   <ClientsSection
-    title="Confían en nosotros"
-    subTitle=`Grandes empresas y pequeños emprendimientos han confiado en nuestra expertise en ${product.data.title}.`
+    title="Trusted by Our Clients"
+    subTitle=`Both large enterprises and small businesses rely on our ${product.data.title} solutions.`
   />
   <section
     class="mx-auto flex max-w-[85rem] flex-col rounded-3xl bg-neutral-100 px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
@@ -143,10 +143,9 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
             <h2
               class="text-balance font-header text-3xl font-bold text-gray-800 lg:text-4xl"
             >
-              Nuestras soluciones <span
-                class="text-yellow-500 dark:text-yellow-400"
+              Our <span class="text-yellow-500 dark:text-yellow-400"
                 >{product.data.title}</span
-              > incluyen:
+              > solutions are designed to meet your needs:
             </h2>
           </div>
           {
