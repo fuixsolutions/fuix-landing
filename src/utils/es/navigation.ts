@@ -18,8 +18,8 @@ const footerLinks = [
   {
     section: "Servicios",
     links: [
-      { name: "Aceleración Digital Empresarial", url: "/es/aceleracion-digital-empresarial/" },
-      { url: "automatizacion-mejoras-desarrollo", name: "Automatización y Mejoras en el Desarrollo" },
+      { name: "Aceleración Digital Empresarial", url: "/es/services/aceleracion-digital-empresarial/" },
+      { name: "Automatización y Mejoras en el Desarrollo", url: "/es/services/automatizacion-mejoras-desarrollo" },
       { name: "Desarrollo de Aplicaciones", url: "/es/services/desarrollo-aplicaciones" },
       { name: "Low Code / No Code", url: "/es/services/low-code-no-code" },
       { name: "Productos Mínimos Viables", url: "/es/services/mvp" },
