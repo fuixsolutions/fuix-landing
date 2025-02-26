@@ -22,7 +22,7 @@ tabs:
 longDescription:
   title: "¿Qué es la Aceleración Digital Empresarial?"
   subTitle: |
-    Las empresas que desean mantenerse competitivas necesitan transformar la forma en que interactúan con sus clientes. En Fuix.cl, te ayudamos a rediseñar y optimizar el recorrido del cliente utilizando herramientas digitales, automatización y tecnología avanzada.
+    Las empresas que desean mantenerse competitivas necesitan transformar la forma en que interactúan con sus clientes. En Fuix, te ayudamos a rediseñar y optimizar el recorrido del cliente utilizando herramientas digitales, automatización y tecnología avanzada.
     Con nuestro servicio, no solo modernizamos tu negocio, sino que creamos experiencias fluidas, eficientes y escalables para que tu empresa crezca sin fricciones.
   btnTitle: "Contact sales to learn more"
   btnURL: "#"
