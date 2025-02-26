@@ -9,9 +9,9 @@ import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
 import ContactSection from "@components/sections/misc/ContactSection.astro";
 import ClientsSection from "@components/sections/landing/ClientsSection.astro";
-import lowcode from "@images/lowcode.png";
-import mvp from "@images/mvp.png";
-import devops from "@images/devops-monitor.png";
+import automation from "@images/automation-feat.png";
+import apps from "@images/app-feat.png";
+import acceleration from "@images/acceleration-feat.png";
 // Importing necessary functions from Astro
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -42,8 +42,8 @@ const pageTitle: string = `Services | ${SITE.title}`;
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://fui.cl/services",
-    url: "https://fui.cl/services",
+    "@id": "https://fui.cl/es/services",
+    url: "https://fui.cl/es/services",
     name: "Soluciones Digitales | Fuix",
     description:
       "Soluciones digitales innovadoras, diseñadas para maximizar el impacto y adaptarse a las necesidades de tu negocio.",
@@ -57,41 +57,7 @@ const pageTitle: string = `Services | ${SITE.title}`;
     inLanguage: "es-ES",
   }}
 >
-  <div
-    class="mx-auto max-w-[85rem] px-4 pb-10 sm:px-6 lg:px-8 lg:pb-14 2xl:max-w-full"
-  >
-    <!-- <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
-      <div class="flex items-center gap-12">
-        <h1
-          class="font-header text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
-        >
-          {title}
-        </h1>
-        {
-          subTitle && (
-            <p class="hidden max-w-screen-sm text-pretty text-neutral-600 dark:text-neutral-400 md:block">
-              {subTitle}
-            </p>
-          )
-        }
-      </div>
-      <PrimaryCTA title="Customer Stories" url="#testimonials" noArrow={true} />
-    </div> -->
-    <!--Displaying products in alternating styles. Alternative product gets different card styling.-->
-    <!--Maps through all product entries and displays them with either CardSmall or CardWide based on their position.-->
-    <!-- <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-      {
-        product.map((product, index) => {
-          const position = index % 4;
-          if (position === 0 || position === 3) {
-            return <CardSmall product={product} />;
-          } else {
-            return <CardWide product={product} />;
-          }
-        })
-      }
-    </section> -->
-  </div>
+
   <!--Features statistics section-->
   <FeaturesStatsAlt
     title="Nuestros servicios"
@@ -110,33 +76,33 @@ const pageTitle: string = `Services | ${SITE.title}`;
     title=`Podemos guiarte a través del proceso de creación de una <span class="text-yellow-500 dark:text-yellow-400">solución digital</span> que cumpla con las expectativas de tu negocio.`
     tabs={[
       {
-        heading: "Low Code / No Code",
+        heading: "Aceleración Digital Empresarial",
         content:
-          "Construye e integra aplicaciones con un mínimo de codificación, permitiendo a tu equipo crear soluciones de forma más rápida y eficiente.",
-        svg: "lowcode",
-        src: lowcode,
-        alt: "Low Code / No Code",
+          "Optimiza la experiencia de tus clientes con automatización y tecnología de vanguardia.",
+        svg: "sparks",
+        src: acceleration,
+        alt: "Aceleración Digital Empresarial",
         first: true,
-        link: "/es/services/low-code-no-code",
+        link: "/es/services/aceleracion-digital-empresarial",
       },
       {
-        heading: "DevOps",
+        heading: "Automatización y Mejora del Ciclo de Desarrollo",
         content:
-          "Aprovecha el poder de la automatización y la colaboración para optimizar tu proceso de desarrollo y entregar software de alta calidad.",
-        svg: "nas",
-        src: devops,
-        alt: "DevOps",
-        second: true,
-        link: "/es/services/devops",
+          "Optimiza tu flujo de trabajo con DevOps y mejores prácticas de desarrollo.",
+        svg: "hammer",
+        src: automation,
+        alt: "Automatización y Mejora del Ciclo de Desarrollo",
+        link: "/es/services/automatizacion-mejoras-desarrollo",
       },
+      
       {
-        heading: "Productos Mínimos Viables",
+        heading: "Desarrollo de Aplicaciones",
         content:
-          "Lanza tu producto de forma rápida y rentable, validando hipótesis acotadas y mejorando continuamente en base a la retroalimentación de tus usuarios.",
+          "Transformamos ideas en aplicaciones funcionales y escalables.",
         svg: "rocket",
-        src: mvp,
-        alt: "Productos Mínimos Viables",
-        link: "/es/services/mvp",
+        src: apps,
+        alt: "Desarrollo de Aplicaciones",
+        link: "/es/services/desarrollo-aplicaciones",
       },
     ]}
   />
