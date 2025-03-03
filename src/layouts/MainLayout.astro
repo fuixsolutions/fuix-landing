@@ -55,22 +55,6 @@ We set the language of the page to English and add classes for scrollbar and scr
       })(window, document, "script", "dataLayer", "GTM-TMDJ9VSN");
     </script>
     <!-- End Google Tag Manager -->
-    <script is:inline>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.body.addEventListener("click", (event) => {
-          const target = event.target.closest("[data-layer-event]");
-          
-          if (target && target.hasAttribute("data-layer-event")) {  // ✅ FIXED CONDITION
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-              event: target.getAttribute("data-layer-event"),
-              label: target.getAttribute("data-layer-label"),
-              url: target.getAttribute("data-layer-url"),
-            });
-          }
-        });
-      });
-    </script>
   </head>
   <body
     class="bg-neutral-200 selection:bg-yellow-400 selection:text-neutral-700 dark:bg-neutral-800"
