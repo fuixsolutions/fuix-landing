@@ -1,0 +1,296 @@
+---
+// Import section components
+import MainLayout from "@/layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import talent from "@images/talent.png";
+import { SITE } from "@data/constants";
+import ContactSection from "@components/sections/misc/ContactSection.astro";
+import ClientsSection from "@components/sections/landing/ClientsSection.astro";
+
+// Global declaration for gsap animation library
+declare global {
+  interface Window {
+    gsap: any;
+  }
+}
+
+
+const pageTitle: string = `Talento en Crecimiento | ${SITE.title}`;
+const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-0.5 h-6 w-6 text-yellow-500 dark:text-yellow-400 flex-none"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>`;
+---
+
+<MainLayout title={pageTitle}>
+  <div id="overlay" class="fixed inset-0 bg-neutral-200 dark:bg-neutral-800">
+  </div>
+
+  <section
+    class="mx-auto flex max-w-[85rem] flex-col px-4 py-12 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+  
+    <div
+      class="flex flex-col items-center justify-between space-y-4 sm:flex-row sm:space-y-0 py-120"
+    >
+      <div id="fadeInUp">
+        <h1
+          class="block font-header text-4xl font-bold tracking-tighter text-yellow-500 dark:text-yellow-400 sm:text-5xl md:text-6xl lg:text-7xl"
+        >
+          Encuentra Talento en Fuix
+        </h1>
+        <p class="text-lg text-neutral-600 dark:text-neutral-400">
+          En Fuix conectamos talento emergente con empresas que buscan innovación y energía fresca. A través de nuestro programa, entrenamos a practicantes, potenciamos sus habilidades y los vinculamos con oportunidades laborales reales.
+        </p>
+      </div>
+      <div>
+        <Image
+          id="fadeInMoveUp"
+          src={talent}
+          class="w-[600px] rounded-3xl"
+          alt="Talento"
+          format={"avif"}
+          loading={"eager"}
+        />
+      </div>
+    </div>
+  </section>
+  <section
+    class="mx-auto flex max-w-[85rem] flex-col px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="lg:grid lg:grid-cols-12 lg:items-center lg:gap-16">
+      <div class="mt-5 sm:mt-10 lg:col-span-7 lg:mt-0">
+        <div class="space-y-6 sm:space-y-8">
+          <div class="space-y-2 md:space-y-4">
+            <h2
+              class="text-balance font-header text-3xl font-bold text-neutral-800 dark:text-neutral-200 lg:text-4xl"
+            >
+            ¿Cómo Funciona?
+            </h2>
+          </div>
+          <ul class="space-y-2 sm:space-y-4">
+            <li class="flex space-x-3">
+              <Fragment set:html={ListItemMarker} />
+              <span class="text-pretty text-base text-neutral-600 dark:text-neutral-400">
+                Seleccionamos talento: Buscamos recién egresados con alto potencial y ganas de aprender.
+              </span>
+            </li>
+            <li class="flex space-x-3">
+              <Fragment set:html={ListItemMarker} />
+              <span class="text-pretty text-base text-neutral-600 dark:text-neutral-400">
+                Capacitamos: Entrenamos en tecnologías y metodologías clave para el mundo laboral.
+              </span>
+            </li>
+            <li class="flex space-x-3">
+              <Fragment set:html={ListItemMarker} />
+              <span class="text-pretty text-base text-neutral-600 dark:text-neutral-400">
+                Conectamos con empresas: Vinculamos a nuestros practicantes con empresas que buscan talento emergente.
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <ClientsSection
+    title="Confían en nosotros"
+    subTitle=`Grandes empresas y pequeños emprendimientos han confiado en nuestra expertise en nuestro talento.`
+  />
+  <section
+    class="mx-auto flex max-w-[85rem] flex-col rounded-3xl bg-neutral-100 px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="lg:grid lg:grid-cols-12 lg:items-center lg:gap-10">
+      <div class="mt-5 sm:mt-10 lg:col-span-6 lg:mt-0">
+        <div class="space-y-6 sm:space-y-8">
+          <div class="space-y-2 md:space-y-4">
+            <h2
+              class="text-balance font-header text-3xl font-bold text-gray-800 lg:text-4xl"
+            >
+              <span
+                class="text-yellow-500 dark:text-yellow-400"
+                >Beneficios para Empresas</span
+              >
+            </h2>
+            <p class="text-pretty text-gray-600 dark:text-gray-400">
+              subtitle 2
+            </p>
+          </div>
+          <ul class="space-y-2 sm:space-y-4">
+            <li class="flex space-x-3">
+              <Fragment set:html={ListItemMarker} />
+              <div class="info">
+                <h2 class="text-balance text-base font-bold text-neutral-800 dark:text-neutral-200">
+                  Accede a talento joven y capacitado.
+                </h2>
+                <span class="text-pretty text-base text-neutral-600 dark:text-neutral-400">
+                  item subtitle
+                </span>
+              </div>
+            </li>
+            <li class="flex space-x-3">
+              <Fragment set:html={ListItemMarker} />
+              <div class="info">
+                <h2 class="text-balance text-base font-bold text-neutral-800 dark:text-neutral-200">
+                  Reduce costos y tiempo en reclutamiento.
+                </h2>
+                <span class="text-pretty text-base text-neutral-600 dark:text-neutral-400">
+                  item subtitle
+                </span>
+              </div>
+            </li>
+            <li class="flex space-x-3">
+              <Fragment set:html={ListItemMarker} />
+              <div class="info">
+                <h2 class="text-balance text-base font-bold text-neutral-800 dark:text-neutral-200">
+                  Practicantes alineados con las necesidades del mercado.
+                </h2>
+                <span class="text-pretty text-base text-neutral-600 dark:text-neutral-400">
+                  item subtitle
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  <ContactSection />
+</MainLayout>
+
+<script>
+  import { gsap } from "gsap";
+
+  type AnimationSettings = {
+    autoAlpha?: number;
+    y?: number;
+    x?: number;
+    willChange?: string;
+  };
+
+  function setElementAnimationDefaults(
+    id: string,
+    settings: AnimationSettings
+  ) {
+    gsap.set(id, settings);
+  }
+
+  setElementAnimationDefaults("#fadeText", {
+    autoAlpha: 0,
+    y: 50,
+    willChange: "transform, opacity",
+  });
+
+  setElementAnimationDefaults("#fadeInUp", {
+    autoAlpha: 0,
+    y: 50,
+    willChange: "transform, opacity",
+  });
+
+  setElementAnimationDefaults("#fadeInMoveUp", {
+    autoAlpha: 0,
+    y: 300,
+    willChange: "transform, opacity",
+  });
+
+  let timeline = gsap.timeline({ defaults: { overwrite: "auto" } });
+
+  timeline.to("#fadeText", {
+    duration: 1.5,
+    autoAlpha: 1,
+    y: 0,
+    delay: 1,
+    ease: "power2.out",
+  });
+
+  timeline.to(
+    "#fadeInUp",
+    { duration: 1.5, autoAlpha: 1, y: 0, ease: "power2.out" },
+    "-=1.2"
+  );
+
+  timeline.to(
+    "#fadeInMoveUp",
+    { duration: 1.5, autoAlpha: 1, y: 0, ease: "power2.out" },
+    "-=1.2"
+  );
+
+  timeline.to("#overlay", { duration: 1, autoAlpha: 0, delay: 0.2 });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    function setButtonInactive(btn: any, activeButton: any) {
+      if (btn !== activeButton) {
+        btn.classList.remove(
+          "active",
+          "bg-neutral-100",
+          "hover:border-transparent",
+          "dark:bg-white/[.05]"
+        );
+
+        const tabId = btn.getAttribute("data-target");
+        if (tabId) {
+          const contentElement = document.querySelector(tabId);
+          if (contentElement) {
+            contentElement.classList.add("hidden");
+          }
+        }
+
+        changeHeadingStyle(
+          btn,
+          ["text-neutral-800", "dark:text-neutral-200"],
+          ["text-orange-400", "dark:text-orange-300"]
+        );
+      }
+    }
+
+    function activateButton(button: any) {
+      button.classList.add(
+        "active",
+        "bg-neutral-100",
+        ",hover:border-transparent",
+        "dark:bg-white/[.05]"
+      );
+
+      const tabId = button.getAttribute("data-target");
+      if (tabId) {
+        const contentElementToShow = document.querySelector(tabId);
+        if (contentElementToShow) {
+          contentElementToShow.classList.remove("hidden");
+        }
+      }
+
+      changeHeadingStyle(
+        button,
+        ["text-orange-400", "dark:text-orange-300"],
+        ["text-neutral-800", "dark:text-neutral-200"]
+      );
+    }
+
+    function changeHeadingStyle(
+      button: any,
+      addClasses: any,
+      removeClasses: any
+    ) {
+      let heading = button.querySelector("span");
+      if (heading) {
+        heading.classList.remove(...removeClasses);
+        heading.classList.add(...addClasses);
+      }
+    }
+
+    const tabButtons = document.querySelectorAll("[data-target]");
+
+    if (tabButtons.length > 0) {
+      changeHeadingStyle(
+        tabButtons[0],
+        ["text-orange-400", "dark:text-orange-300"],
+        []
+      );
+    }
+
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        tabButtons.forEach((btn) => setButtonInactive(btn, button));
+        activateButton(button);
+      });
+    });
+  });
+</script>
