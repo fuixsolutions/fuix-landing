@@ -136,22 +136,26 @@ const formSubTitle: string =
       if (errorDiv) errorDiv.textContent = ""; // Clear previous errors
 
       // Get form values
-      const firstName = document.getElementById("hs-firstname-contacts")?.value.trim();
-      const lastName = document.getElementById("hs-lastname-contacts")?.value.trim();
-      const email = document.getElementById("hs-email-contacts")?.value.trim();
-      const phone = document.getElementById("hs-phone-number")?.value.trim();
-      const message = document.getElementById("hs-about-contacts")?.value.trim();
+      const firstName = (document.getElementById("hs-firstname-contacts") as HTMLInputElement)?.value.trim();
+      const lastName = (document.getElementById("hs-lastname-contacts") as HTMLInputElement)?.value.trim();
+      const email = (document.getElementById("hs-email-contacts") as HTMLInputElement)?.value.trim();
+      const phone = (document.getElementById("hs-phone-number") as HTMLInputElement)?.value.trim();
+      const message = (document.getElementById("hs-about-contacts") as HTMLInputElement)?.value.trim();
 
       // Email validation regex
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
       // Error handling
       if (!firstName || !lastName || !email || !message) {
-        errorDiv.textContent = "Todos los campos obligatorios deben completarse.";
+        if (errorDiv) {
+          errorDiv.textContent = "Todos los campos obligatorios deben completarse.";
+        }
         return;
       }
       if (!emailRegex.test(email)) {
-        errorDiv.textContent = "Por favor, ingresa un email válido.";
+        if (errorDiv) {
+          errorDiv.textContent = "Por favor, ingresa un email válido.";
+        }
         return;
       }
 
@@ -172,13 +176,19 @@ const formSubTitle: string =
         });
 
         if (response.ok) {
-          formDiv.remove();
+          if (formDiv) {
+            formDiv.remove();
+          }
           window.location.href = "/thank-you";
         } else {
-          errorDiv.textContent = "Error al enviar el formulario.";
+          if (errorDiv) {
+            errorDiv.textContent = "Error al enviar el formulario.";
+          }
         }
       } catch (error) {
-        errorDiv.textContent = "Ocurrió un error al enviar el formulario.";
+        if (errorDiv) {
+          errorDiv.textContent = "Ocurrió un error al enviar el formulario.";
+        }
       }
     });
   }
