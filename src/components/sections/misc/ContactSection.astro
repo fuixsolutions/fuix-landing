@@ -125,56 +125,62 @@ const formSubTitle: string =
 <script>
   const localUrl = window.location.href;
   const contactForm = document.getElementById("contactForm");
+
   if (contactForm) {
     contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
+
       const errorDiv = document.getElementById("error");
       const formDiv = document.getElementById("contactForm");
-      if (errorDiv) {
-        errorDiv.textContent = "";
+
+      if (errorDiv) errorDiv.textContent = ""; // Clear previous errors
+
+      // Get form values
+      const firstName = document.getElementById("hs-firstname-contacts")?.value.trim();
+      const lastName = document.getElementById("hs-lastname-contacts")?.value.trim();
+      const email = document.getElementById("hs-email-contacts")?.value.trim();
+      const phone = document.getElementById("hs-phone-number")?.value.trim();
+      const message = document.getElementById("hs-about-contacts")?.value.trim();
+
+      // Email validation regex
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      // Error handling
+      if (!firstName || !lastName || !email || !message) {
+        errorDiv.textContent = "Todos los campos obligatorios deben completarse.";
+        return;
+      }
+      if (!emailRegex.test(email)) {
+        errorDiv.textContent = "Por favor, ingresa un email válido.";
+        return;
       }
 
-      const formData = new FormData(event.target as HTMLFormElement);
-      let dataFormatted = Object.fromEntries(formData.entries());
-      dataFormatted.service = localUrl;
-      dataFormatted.message = dataFormatted["hs-about-contacts"];
-      dataFormatted.name = `${dataFormatted["hs-firstname-contacts"]} ${dataFormatted["hs-lastname-contacts"]}`;
-      dataFormatted.email = dataFormatted["hs-email-contacts"];
-
+      // Format data for submission
       const data = {
-        service: dataFormatted.service,
-        message: dataFormatted.message,
-        name: dataFormatted.name,
-        email: dataFormatted.email,
+        service: localUrl,
+        message,
+        name: `${firstName} ${lastName}`,
+        email,
+        phone
       };
 
       try {
-        const response = await fetch(
-          "https://eoc0a86hmx5it7a.m.pipedream.net",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data),
-          }
-        );
+        const response = await fetch("https://eoc0a86hmx5it7a.m.pipedream.net", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
 
         if (response.ok) {
-          if (formDiv) {
-            formDiv.remove();
-          }
-          const lang = localUrl.split("/")[3];
-          const redirectTo = "/thank-you";
-          window.location.href = redirectTo;
+          formDiv.remove();
+          window.location.href = "/thank-you";
         } else {
-          if (errorDiv) {
-            errorDiv.textContent = "Failed to submit the form.";
-          }
+          errorDiv.textContent = "Error al enviar el formulario.";
         }
       } catch (error) {
-        if (errorDiv) {
-          errorDiv.textContent = "An error occurred while submitting the form.";
-        }
+        errorDiv.textContent = "Ocurrió un error al enviar el formulario.";
       }
     });
   }
 </script>
+
