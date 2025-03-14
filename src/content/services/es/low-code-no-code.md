@@ -30,7 +30,9 @@ descriptionList:
   - title: "Rentable"
     subTitle: "Ahorra en costos de desarrollo con plataformas NoCode y LowCode."
   - title: "Integración fácil"
-    subTitle: "Integra de forma sencilla con plataformas populares como Jumpseller, WooCommerce o Google Sheets."
+    subTitle: "Integra de forma sencilla con plataformas populares Make, Zappier, NocoDB, Airtable entre otras."
+  - title: "Trabajamos en entornos corporativos"
+    subTitle: "Nos integramos a entornos corporativos con Microsoft Power Apps"
 specificationsLeft:
   - title: "Construcción rápida de aplicaciones"
     subTitle: "Crea soluciones funcionales en semanas, no meses, utilizando herramientas visuales como Bubble, Adalo o Glide."
